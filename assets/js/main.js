@@ -14,8 +14,23 @@
   onScrollHeader();
   onScrollBtn();
 
+  // Smooth scroll to top: starts fast, then slows down (ease-out cubic)
+  const scrollToTopEaseOut = (duration = 900) => {
+    const startY = window.scrollY;
+    if (startY === 0) return;
+    const startTime = performance.now();
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, startY * (1 - easeOutCubic(progress)));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   if (backBtn) {
-    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    backBtn.addEventListener('click', () => scrollToTopEaseOut(900));
   }
 
   // 3. Close mobile menu when a link is tapped
