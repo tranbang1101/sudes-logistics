@@ -2,373 +2,781 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sudes Logistics - Giải pháp logistics toàn diện: vận chuyển đường bộ, đường không, đường biển, hải quan, kho bãi.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Sudes Logistics - Đơn vị cung cấp giải pháp vận tải và hậu cần chuyên nghiệp, linh hoạt và tối ưu chi phí. Đồng hành cùng doanh nghiệp xuất nhập khẩu Việt Nam.">
   <meta name="theme-color" content="#fd5624">
-  <title>Sudes Logistics</title>
+  <title>Sudes Logistics - Giải pháp Logistic Toàn Diện</title>
 
+  <!-- Google Fonts & Swiper CSS & Bootstrap Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body id="top">
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="siteHeader">
-  <nav class="navbar navbar-expand-lg container-xl">
-    <a class="navbar-brand brand" href="#top">
-      <span class="brand-mark"><i class="bi bi-truck"></i></span>
-      <span class="brand-text">SUDES<small>LOGISTICS</small></span>
-    </a>
-
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
-      <i class="bi bi-list fs-2"></i>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav mx-auto gap-lg-3">
-        <li class="nav-item"><a class="nav-link active" href="#top">Trang chủ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#history">Lịch sử hình thành</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#services" data-bs-toggle="dropdown">Dịch vụ</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#services">Đại lý Hải quan</a></li>
-            <li><a class="dropdown-item" href="#services">Bảo hiểm Hàng hóa</a></li>
-            <li><a class="dropdown-item" href="#services">Vận chuyển Hàng không Quốc tế</a></li>
-            <li><a class="dropdown-item" href="#services">Vận chuyển Đường biển Quốc tế</a></li>
-            <li><a class="dropdown-item" href="#services">Vận chuyển Nội bộ</a></li>
-            <li><a class="dropdown-item" href="#services">Nâng hạ - Cẩu - Lắp đặt hàng siêu trường, siêu trọng</a></li>
-            <li><a class="dropdown-item" href="#services">Cho thuê Kho bãi &amp; Phân phối hàng hóa</a></li>
-            <li><a class="dropdown-item" href="#services">Dịch vụ Chứng từ &amp; Tư vấn XNK</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#news">Tin tức</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gallery">Thư viện</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">Câu hỏi thường gặp</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
-      </ul>
-
-      <div class="d-flex align-items-center gap-3 header-actions">
-        <a href="tel:19006750" class="hotline d-none d-xl-flex"><i class="bi bi-telephone-fill"></i> 1900 6750</a>
-        <a href="#contact" class="btn btn-brand btn-sm">BÁO GIÁ</a>
-        <button class="btn btn-icon-search" type="button" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button>
+<!-- ============ HEADER WRAPPER ============ -->
+<header class="header-wrapper" id="siteHeader">
+  <!-- Top Bar: Socials + Contact Info (Desktop/Tablet) -->
+  <div class="header-top d-none d-lg-block">
+    <div class="container-xl">
+      <div class="row align-items-center">
+        <div class="col-lg-3">
+          <div class="social_header">
+            <a href="https://www.facebook.com/sapowebvietnam/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.7 1.7-1.7H18V0h-3.8C10.5 0 9 1.8 9 5.1V8z" fill="#fff"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-3.2 1.7-4.8 4.9-4.9 1.2-.1 1.6-.1 4.8-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7-1.2-.1-1.6-.1-4.9-.1zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z" fill="#fff"/></svg>
+            </a>
+            <a href="https://zalo.me/19006750" target="_blank" rel="noopener" title="Zalo" aria-label="Zalo">
+              <img src="assets/img/hea_social_3.png" alt="Zalo" width="38" height="15" style="object-fit:contain;">
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="Youtube" aria-label="Youtube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z" fill="#fff"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="contact_header">
+            <div class="box_poly_hea">
+              <i class="bi bi-clock text-danger fs-6"></i>
+              <span class="sub-text">Thời gian làm việc: 8h - 22h từ thứ 2 đến chủ nhật</span>
+            </div>
+            <div class="box_poly_hea">
+              <i class="bi bi-telephone-fill text-danger fs-6"></i>
+              <a href="tel:19006750" class="sub-text phone">1900 6750</a>
+            </div>
+            <div class="box_poly_hea">
+              <i class="bi bi-envelope-fill text-danger fs-6"></i>
+              <a href="mailto:support@sapo.vn" class="sub-text">support@sapo.vn</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="header-main">
+    <div class="container-xl">
+      <div class="row align-items-center">
+        <!-- Logo & Mobile Trigger -->
+        <div class="col-lg-2 col-8 d-flex align-items-center gap-3">
+          <button class="mobile-nav-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas" aria-label="Menu">
+            <i class="bi bi-list"></i>
+          </button>
+          <a href="#top" class="logo" title="Sudes Logistics">
+            <img src="assets/img/logo.png" alt="Sudes Logistics" width="228" height="56">
+          </a>
+        </div>
+
+        <!-- Desktop Menu with 3D Dropdowns -->
+        <div class="col-lg-8 d-none d-lg-block">
+          <nav>
+            <ul class="nav-main">
+              <li class="active">
+                <a href="#top">
+                  <img src="assets/img/home_menu.png" alt="Trang chủ" class="menu-home-icon" width="16" height="16">
+                  <span>Trang chủ</span>
+                </a>
+              </li>
+              <li><a href="#about"><span>Giới thiệu</span></a></li>
+              <li><a href="#history"><span>Lịch sử hình thành</span></a></li>
+              <li>
+                <a href="#services">
+                  <span>Dịch vụ</span>
+                  <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-sub">
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Đại lý Hải quan</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Bảo hiểm Hàng hóa</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Vận chuyển Hàng không Quốc tế</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Vận chuyển Đường biển Quốc tế</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Vận chuyển Nội bộ</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Nâng hạ - Cẩu - Lắp đặt hàng siêu trường, siêu trọng</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Cho thuê Kho bãi &amp; Phân phối hàng hóa</a></li>
+                  <li><a href="#services"><i class="bi bi-check2-circle me-1 text-danger"></i> Dịch vụ Chứng từ &amp; Tư vấn XNK</a></li>
+                </ul>
+              </li>
+              <li><a href="#news"><span>Tin tức</span></a></li>
+              <li>
+                <a href="#gallery">
+                  <span>Thư viện</span>
+                  <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-sub" style="min-width: 200px;">
+                  <li><a href="#gallery"><i class="bi bi-play-circle me-1 text-danger"></i> Thư viện video</a></li>
+                  <li><a href="#gallery"><i class="bi bi-images me-1 text-danger"></i> Thư viện album</a></li>
+                </ul>
+              </li>
+              <li><a href="#faq"><span>Câu hỏi thường gặp</span></a></li>
+              <li><a href="#contact"><span>Liên hệ</span></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Actions: Search Dropdown + BÁO GIÁ button -->
+        <div class="col-lg-2 col-4">
+          <div class="header-actions-right">
+            <div class="search-box-toggle d-none d-sm-block" id="searchBoxToggle">
+              <button class="btn-search-trigger" type="button" aria-label="Tìm kiếm" id="btnSearchTrigger">
+                <i class="bi bi-search"></i>
+              </button>
+              <div class="search-dropdown-form">
+                <form onsubmit="event.preventDefault();" class="d-flex gap-2">
+                  <input type="text" class="form-control form-control-sm" placeholder="Tìm kiếm dịch vụ..." aria-label="Search">
+                  <button type="submit" class="btn btn-brand-solid btn-sm px-3" aria-label="Submit search"><i class="bi bi-arrow-right"></i></button>
+                </form>
+              </div>
+            </div>
+            <a href="#contact" class="btn_bg" title="BÁO GIÁ">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="m87 24h-62c-4.4 0-8 3.6-8 8v3c0 1.1.9 2 2 2s2-.9 2-2v-3c0-.4.1-.8.2-1.2l22.4 19.2-22.4 19.2c-.1-.4-.2-.8-.2-1.2v-3c0-1.1-.9-2-2-2s-2 .9-2 2v3c0 4.4 3.6 8 8 8h62c4.4 0 8-3.6 8-8v-36c0-4.4-3.6-8-8-8zm-62.8 4.1c.2-.1.5-.1.8-.1h62c.3 0 .6 0 .8.1l-30.5 26.1c-.8.6-1.8.6-2.6 0zm62.8 43.9h-62c-.3 0-.6 0-.8-.1l22.5-19.3 5.4 4.7c1.1 1 2.5 1.5 3.9 1.5s2.8-.5 3.9-1.5l5.4-4.7 22.5 19.3c-.2.1-.5.1-.8.1zm4-4c0 .4-.1.8-.2 1.2l-22.4-19.2 22.4-19.2c.1.4.2.8.2 1.2zm-80-23c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2s-.9 2-2 2h-12c-1.1 0-2-.9-2-2zm14 12h-18c-1.1 0-2-.9-2-2s.9-2 2-2h18c1.1 0 2 .9 2 2s-.9 2-2 2z"/>
+              </svg>
+              <span>BÁO GIÁ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<main id="top">
+<!-- ============ MOBILE OFFCANVAS DRAWER ============ -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenuOffcanvas" aria-labelledby="mobileMenuOffcanvasLabel">
+  <div class="offcanvas-header border-bottom">
+    <a href="#top" class="logo">
+      <img src="assets/img/logo.png" alt="Sudes Logistics" width="180">
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <ul class="list-unstyled p-3 mb-0">
+      <li class="border-bottom py-2"><a href="#top" class="fw-semibold text-danger d-block" data-bs-dismiss="offcanvas"><i class="bi bi-house-door me-2"></i> Trang chủ</a></li>
+      <li class="border-bottom py-2"><a href="#about" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Giới thiệu</a></li>
+      <li class="border-bottom py-2"><a href="#history" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Lịch sử hình thành</a></li>
+      <li class="border-bottom py-2">
+        <a class="fw-semibold d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#mobileServiceCollapse" role="button">
+          <span>Dịch vụ</span>
+          <i class="bi bi-chevron-down"></i>
+        </a>
+        <div class="collapse ps-3 mt-2" id="mobileServiceCollapse">
+          <ul class="list-unstyled small">
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Đại lý Hải quan</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Bảo hiểm Hàng hóa</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Vận chuyển Hàng không Quốc tế</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Vận chuyển Đường biển Quốc tế</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Vận chuyển Nội bộ</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Nâng hạ - Cẩu - Lắp đặt</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Kho bãi &amp; Phân phối</a></li>
+            <li class="py-1"><a href="#services" data-bs-dismiss="offcanvas">• Dịch vụ Chứng từ &amp; Tư vấn XNK</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-bottom py-2"><a href="#news" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Tin tức</a></li>
+      <li class="border-bottom py-2"><a href="#gallery" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Thư viện</a></li>
+      <li class="border-bottom py-2"><a href="#faq" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Câu hỏi thường gặp</a></li>
+      <li class="py-2"><a href="#contact" class="fw-semibold d-block" data-bs-dismiss="offcanvas">Liên hệ</a></li>
+    </ul>
+    <div class="p-3 bg-light border-top">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <i class="bi bi-telephone-fill text-danger"></i>
+        <a href="tel:19006750" class="fw-bold text-danger">1900 6750</a>
+      </div>
+      <div class="d-flex align-items-center gap-2 text-muted small">
+        <i class="bi bi-envelope-fill text-danger"></i>
+        <span>support@sapo.vn</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- ============ HERO SLIDER ============ -->
-<section class="hero">
-  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-    <div class="carousel-inner">
-      <div class="carousel-item active hero-slide slide-1">
-        <div class="container-xl h-100 d-flex align-items-center">
-          <div class="hero-content" data-anim="fade-up">
-            <h1 class="hero-title">Giải Pháp Logistic <span>Toàn Diện</span></h1>
-            <p class="hero-desc">Chúng tôi cung cấp giải pháp chuỗi cung ứng tối ưu, hỗ trợ hàng nghìn doanh nghiệp Việt Nam xuất nhập khẩu hiệu quả. Nâng cao vận hành, mở rộng thị trường.</p>
-            <a href="#contact" class="btn btn-brand btn-lg">Liên hệ ngay</a>
+<main>
+
+<!-- ============ HERO SLIDER (Swiper with Fade Animation) ============ -->
+<section class="hero-slider-section">
+  <div class="swiper hero-swiper" id="heroSwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="hero-slide-item">
+          <picture>
+            <source media="(min-width: 992px)" srcset="assets/img/slider_1.jpg">
+            <img src="assets/img/slider_1.jpg" alt="Giải Pháp Logistic Toàn Diện">
+          </picture>
+          <div class="hero-overlay"></div>
+          <div class="container-xl h-100 position-relative">
+            <div class="hero-text-wrap">
+              <h1 class="hero-title">Giải Pháp Logistic <span class="text-danger">Toàn Diện</span></h1>
+              <p class="hero-desc">Chúng tôi cung cấp giải pháp chuỗi cung ứng tối ưu, hỗ trợ hàng nghìn doanh nghiệp Việt Nam xuất nhập khẩu hiệu quả. Nâng cao vận hành, mở rộng thị trường.</p>
+              <div>
+                <a href="#contact" class="btn_bg btn-lg">
+                  <span>NHẬN BÁO GIÁ NGAY</span>
+                  <i class="bi bi-arrow-right fs-5"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item hero-slide slide-2">
-        <div class="container-xl h-100 d-flex align-items-center">
-          <div class="hero-content">
-            <h1 class="hero-title">Vững Bước <span>Vươn Ra Thế Giới</span></h1>
-            <p class="hero-desc">Là chuyên gia logistics hàng đầu, chúng tôi mang đến dịch vụ chuyên nghiệp và giải pháp đột phá cho xuất nhập khẩu. Giúp hàng nghìn doanh nghiệp vững vàng phát triển toàn cầu.</p>
-            <a href="#about" class="btn btn-brand btn-lg">Tìm hiểu thêm</a>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="hero-slide-item">
+          <picture>
+            <source media="(min-width: 992px)" srcset="assets/img/slider_2.jpg">
+            <img src="assets/img/slider_2.jpg" alt="Vững Bước Vươn Ra Thế Giới">
+          </picture>
+          <div class="hero-overlay"></div>
+          <div class="container-xl h-100 position-relative">
+            <div class="hero-text-wrap">
+              <h1 class="hero-title">Vững Bước <span class="text-danger">Vươn Ra Thế Giới</span></h1>
+              <p class="hero-desc">Là chuyên gia logistics hàng đầu, chúng tôi mang đến dịch vụ chuyên nghiệp và giải pháp đột phá cho xuất nhập khẩu. Giúp hàng nghìn doanh nghiệp vững vàng phát triển toàn cầu.</p>
+              <div>
+                <a href="#about" class="btn_bg btn-lg">
+                  <span>TÌM HIỂU THÊM</span>
+                  <i class="bi bi-arrow-right fs-5"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-indicators hero-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-    </div>
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination hero-pagination"></div>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="about section-pad" id="about">
+<!-- ============ ABOUT SECTION ============ -->
+<section class="section_about section-pad" id="about">
   <div class="container-xl">
     <div class="row align-items-center g-5">
       <div class="col-lg-6" data-anim="fade-right">
-        <div class="about-visual">
-          <div class="visual-card">
-            <i class="bi bi-box-seam"></i>
-            <p>Hàng nghìn đơn hàng mỗi năm</p>
-          </div>
-          <div class="visual-badge"><strong>10</strong><span>Năm kinh nghiệm</span></div>
-        </div>
+        <a class="img_about" href="#about" title="Banner Giới Thiệu">
+          <img src="assets/img/banner_about.jpg" alt="Sudes Logistics Giới Thiệu" width="768" height="619" loading="lazy">
+        </a>
       </div>
       <div class="col-lg-6" data-anim="fade-left">
-        <span class="section-tag">Giới thiệu</span>
-        <h2 class="section-title">SUDES LOGISTICS CO.,LTD</h2>
-        <p class="lead-text">Được thành lập bởi những nhà lãnh đạo mang trong mình tâm huyết mạnh mẽ đối với lĩnh vực Logistics. SUDES LOGISTICS có nhiều năm kinh nghiệm cung cấp các dịch vụ hậu cần, các giải pháp tối ưu trong hoạt động Xuất - Nhập khẩu cho hàng nghìn doanh nghiệp tại Việt Nam.</p>
+        <div class="box_about">
+          <span class="sub-title-tag">Giới thiệu</span>
+          <h2 class="title_about title_font mb-3">SUDES LOGISTICS CO.,LTD</h2>
+          <p class="lead-p mb-4">Được thành lập bởi những nhà lãnh đạo mang trong mình tâm huyết mạnh mẽ đối với lĩnh vực Logistics. SUDES LOGISTICS có nhiều năm kinh nghiệm cung cấp các dịch vụ hậu cần, các giải pháp tối ưu trong hoạt động Xuất - Nhập khẩu cho hàng nghìn doanh nghiệp tại Việt Nam.</p>
 
-        <div class="mode-list">
-          <div class="mode-item"><span class="mode-icon"><i class="bi bi-truck"></i></span>Vận chuyển hàng hóa đường bộ</div>
-          <div class="mode-item"><span class="mode-icon"><i class="bi bi-airplane"></i></span>Vận chuyển hàng hóa đường không</div>
-          <div class="mode-item"><span class="mode-icon"><i class="bi bi-water"></i></span>Vận chuyển hàng hóa đường biển</div>
-        </div>
-
-        <div class="d-flex flex-wrap align-items-center gap-4 mt-4">
-          <div class="counter-box">
-            <strong data-count="1500">0</strong><span>+</span>
-            <p>Đơn hàng chúng tôi vận chuyển thành công</p>
+          <!-- 3 Mode Icons (Exactly like Demo) -->
+          <div class="box_thong_so">
+            <div class="item_thong_so">
+              <img src="assets/img/about_icon_1.png" alt="Vận chuyển đường bộ" width="40" height="40">
+              <p class="content_thong_so">Vận chuyển hàng hóa đường bộ</p>
+            </div>
+            <div class="item_thong_so">
+              <img src="assets/img/about_icon_2.png" alt="Vận chuyển đường không" width="40" height="40">
+              <p class="content_thong_so">Vận chuyển hàng hóa đường không</p>
+            </div>
+            <div class="item_thong_so">
+              <img src="assets/img/about_icon_3.png" alt="Vận chuyển đường biển" width="40" height="40">
+              <p class="content_thong_so">Vận chuyển hàng hóa đường biển</p>
+            </div>
           </div>
-          <a href="#contact" class="btn btn-brand">BÁO GIÁ NGAY</a>
+
+          <!-- Counter box 1500+ -->
+          <div class="shipping-success-box">
+            <div class="number"><span data-count="1500">0</span>+</div>
+            <div class="content-sus">Đơn hàng chúng tôi <br>vận chuyển thành công</div>
+          </div>
+
+          <div>
+            <a href="#contact" class="btn_bg" title="BÁO GIÁ NGAY">BÁO GIÁ NGAY</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ HISTORY / WORKFLOW ============ -->
-<section class="workflow section-pad" id="history">
+<!-- ============ WORKFLOW (QUY TRÌNH LÀM VIỆC) ============ -->
+<section class="section_quytrinh section-pad" id="history">
   <div class="container-xl">
-    <div class="section-head text-center" data-anim="fade-up">
-      <span class="section-tag">Lịch sử hình thành</span>
-      <h2 class="section-title">QUY TRÌNH LÀM VIỆC</h2>
+    <div class="text-center mb-5" data-anim="fade-up">
+      <span class="sub-title-tag">Lịch sử hình thành</span>
+      <h2 class="title_quy_trinh title_font">QUY TRÌNH LÀM VIỆC</h2>
     </div>
-    <div class="row g-4 mt-2">
-      <div class="col-6 col-lg-3" data-anim="fade-up">
-        <div class="step-card"><span class="step-num">01</span><h3>Tiếp nhận yêu cầu</h3><p>Ghi nhận thông tin hàng hóa và nhu cầu vận chuyển của khách hàng.</p></div>
+
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3" data-anim="fade-up">
+        <div class="item_quy_trinh">
+          <div class="icon_item">
+            <img src="assets/img/quy_trinh_img_1.png" alt="Yêu cầu báo giá" width="60" height="60" loading="lazy">
+          </div>
+          <h3 class="title_item">Yêu cầu báo giá</h3>
+          <p class="content_item">Khách hàng gửi yêu cầu báo giá dịch vụ theo nhu cầu. Chúng tôi nhanh chóng phản hồi với chi phí tối ưu và giải pháp phù hợp nhất cho từng lô hàng.</p>
+        </div>
       </div>
-      <div class="col-6 col-lg-3" data-anim="fade-up" data-delay="100">
-        <div class="step-card"><span class="step-num">02</span><h3>Báo giá &amp; Tư vấn</h3><p>Đề xuất phương án tối ưu chi phí, minh bạch và đúng tiến độ.</p></div>
+      <div class="col-sm-6 col-lg-3" data-anim="fade-up" data-delay="100">
+        <div class="item_quy_trinh">
+          <div class="icon_item">
+            <img src="assets/img/quy_trinh_img_2.png" alt="Tiếp nhận đơn hàng" width="60" height="60" loading="lazy">
+          </div>
+          <h3 class="title_item">Tiếp nhận đơn hàng</h3>
+          <p class="content_item">Sau khi thống nhất báo giá, chúng tôi tiếp nhận thông tin đơn hàng, xác nhận chi tiết và bắt đầu tiến hành các thủ tục xử lý một cách chính xác và nhanh chóng.</p>
+        </div>
       </div>
-      <div class="col-6 col-lg-3" data-anim="fade-up" data-delay="200">
-        <div class="step-card"><span class="step-num">03</span><h3>Vận hành &amp; Giám sát</h3><p>Điều phối vận chuyển, kho bãi và thủ tục hải quan xuyên suốt.</p></div>
+      <div class="col-sm-6 col-lg-3" data-anim="fade-up" data-delay="200">
+        <div class="item_quy_trinh">
+          <div class="icon_item">
+            <img src="assets/img/quy_trinh_img_3.png" alt="Kho bãi và lưu trữ" width="60" height="60" loading="lazy">
+          </div>
+          <h3 class="title_item">Kho bãi và lưu trữ</h3>
+          <p class="content_item">Hàng hóa được sắp xếp vào kho bãi phù hợp, đảm bảo điều kiện bảo quản an toàn, kiểm soát số lượng, tình trạng và hỗ trợ truy xuất dễ dàng khi cần.</p>
+        </div>
       </div>
-      <div class="col-6 col-lg-3" data-anim="fade-up" data-delay="300">
-        <div class="step-card"><span class="step-num">04</span><h3>Giao hàng &amp; Hậu mãi</h3><p>Bàn giao an toàn, cập nhật tình trạng và hỗ trợ sau giao dịch.</p></div>
+      <div class="col-sm-6 col-lg-3" data-anim="fade-up" data-delay="300">
+        <div class="item_quy_trinh">
+          <div class="icon_item">
+            <img src="assets/img/quy_trinh_img_4.png" alt="Vận chuyển sản phẩm" width="60" height="60" loading="lazy">
+          </div>
+          <h3 class="title_item">Vận chuyển sản phẩm</h3>
+          <p class="content_item">Chúng tôi tiến hành vận chuyển hàng hóa đến đúng địa điểm, đúng thời gian với các phương tiện chuyên dụng, đảm bảo an toàn và tối ưu hóa chi phí.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="services section-pad" id="services">
+<!-- ============ SERVICES (DỊCH VỤ CỦA SUDES LOGISTICS) ============ -->
+<section class="section_dich_vu section-pad" id="services">
   <div class="container-xl">
-    <div class="section-head text-center" data-anim="fade-up">
-      <span class="section-tag">Dịch vụ</span>
-      <h2 class="section-title">DỊCH VỤ CỦA SUDES LOGISTICS</h2>
+    <div class="text-center mb-5" data-anim="fade-up">
+      <span class="sub-title-tag">Dịch vụ</span>
+      <h2 class="title_dich_vu title_font">DỊCH VỤ CỦA SUDES LOGISTICS</h2>
     </div>
-    <div class="row g-4 mt-2">
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-file-earmark-text"></i></span><h3>Đại lý hải quan</h3></a>
+
+    <div class="row g-4">
+      <!-- 1 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Đại lý hải quan"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_1.jpg" alt="Đại lý hải quan" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_1.png" alt="Đại lý hải quan"></div>
+            <p class="title_item">Đại lý hải quan</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="80">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-shield-check"></i></span><h3>Bảo hiểm hàng hóa</h3></a>
+      <!-- 2 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="80">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Bảo hiểm hàng hóa"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_2.jpg" alt="Bảo hiểm hàng hóa" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_2.png" alt="Bảo hiểm hàng hóa"></div>
+            <p class="title_item">Bảo hiểm hàng hóa</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="160">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-airplane-engines"></i></span><h3>Vận chuyển hàng không quốc tế</h3></a>
+      <!-- 3 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="160">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Vận chuyển hàng không quốc tế"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_3.jpg" alt="Vận chuyển hàng không quốc tế" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_3.png" alt="Vận chuyển hàng không quốc tế"></div>
+            <p class="title_item">Vận chuyển hàng không quốc tế</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="240">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-ship"></i></span><h3>Vận chuyển đường biển quốc tế</h3></a>
+      <!-- 4 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="240">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Vận chuyển đường biển quốc tế"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_4.jpg" alt="Vận chuyển đường biển quốc tế" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_4.png" alt="Vận chuyển đường biển quốc tế"></div>
+            <p class="title_item">Vận chuyển đường biển quốc tế</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-truck-flatbed"></i></span><h3>Vận chuyển nội bộ</h3></a>
+      <!-- 5 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Vận chuyển nội bộ"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_5.jpg" alt="Vận chuyển nội bộ" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_5.png" alt="Vận chuyển nội bộ"></div>
+            <p class="title_item">Vận chuyển nội bộ</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="80">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-crane"></i></span><h3>Nâng hạ - cẩu - lắp đặt hàng siêu trường, siêu trọng</h3></a>
+      <!-- 6 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="80">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Nâng hạ - cẩu - lắp đặt"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_6.jpg" alt="Nâng hạ - cẩu - lắp đặt" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_6.png" alt="Nâng hạ - cẩu - lắp đặt"></div>
+            <p class="title_item">Nâng hạ - cẩu - lắp đặt siêu trường, siêu trọng</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="160">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-buildings"></i></span><h3>Dịch vụ cho thuê kho bãi, phân phối hàng hóa</h3></a>
+      <!-- 7 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="160">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Cho thuê kho bãi"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_7.jpg" alt="Cho thuê kho bãi" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_7.png" alt="Cho thuê kho bãi"></div>
+            <p class="title_item">Dịch vụ cho thuê kho bãi &amp; phân phối</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-anim="zoom-in" data-delay="240">
-        <a href="#contact" class="service-card"><span class="service-icon"><i class="bi bi-journal-check"></i></span><h3>Dịch vụ chứng từ &amp; tư vấn xuất nhập khẩu</h3></a>
+      <!-- 8 -->
+      <div class="col-6 col-md-4 col-lg-3" data-anim="zoom-in" data-delay="240">
+        <div class="item_dich_vu">
+          <a href="#contact" class="opaci_href" title="Dịch vụ chứng từ & tư vấn XNK"></a>
+          <div class="img_dv"><img src="assets/img/dich_vu_img_8.jpg" alt="Dịch vụ chứng từ & tư vấn XNK" loading="lazy"></div>
+          <div class="info_dich_vu">
+            <div class="icon_dv"><img src="assets/img/dich_vu_icon_8.png" alt="Dịch vụ chứng từ"></div>
+            <p class="title_item">Dịch vụ chứng từ &amp; tư vấn XNK</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY US / STATS ============ -->
-<section class="why section-pad" id="why">
+<!-- ============ WHY CHOOSE US (TẠI SAO CHỌN CHÚNG TÔI) ============ -->
+<section class="section_why_choose" style="background-image: url('assets/img/bg_tai_sao_chon.jpg');" id="why">
+  <div class="container">
+    <div class="text-center text-lg-start mb-4" data-anim="fade-up">
+      <p class="sub_tai_sao">TẠI SAO CHỌN CHÚNG TÔI?</p>
+      <h2 class="title_tai_sao">VỚI 10 NĂM KINH NGHIỆM</h2>
+      <p class="content_tai_sao">Trở thành công ty hậu cần chuỗi cung ứng được ưa thích nhất trên thế giới vì hiểu biết sâu sắc, chất lượng dịch vụ tốt nhất, đổi mới và tăng trưởng không ngừng cho doanh nghiệp và xã hội.</p>
+    </div>
+
+    <!-- 5 Animated Statistic Cards -->
+    <div class="list_tai_sao_chon">
+      <div class="item_tai_sao_chon" data-anim="fade-up">
+        <div class="icon_item"><img src="assets/img/icon_tsc_1.png" alt="30 Cụm kho" loading="lazy"></div>
+        <p class="title_item"><span data-count="30">0</span> CỤM KHO</p>
+        <p class="content_item">Trên toàn quốc</p>
+      </div>
+      <div class="item_tai_sao_chon" data-anim="fade-up" data-delay="100">
+        <div class="icon_item"><img src="assets/img/icon_tsc_2.png" alt="300000 M3" loading="lazy"></div>
+        <p class="title_item"><span data-count="300000">0</span> M³</p>
+        <p class="content_item">Tổng sức chứa</p>
+      </div>
+      <div class="item_tai_sao_chon" data-anim="fade-up" data-delay="200">
+        <div class="icon_item"><img src="assets/img/icon_tsc_3.png" alt="250 Nhân viên" loading="lazy"></div>
+        <p class="title_item"><span data-count="250">0</span></p>
+        <p class="content_item">Cán bộ nhân viên</p>
+      </div>
+      <div class="item_tai_sao_chon" data-anim="fade-up" data-delay="300">
+        <div class="icon_item"><img src="assets/img/icon_tsc_4.png" alt="100 Xe tải" loading="lazy"></div>
+        <p class="title_item"><span data-count="100">0</span> XE TẢI</p>
+        <p class="content_item">Chuyên dụng</p>
+      </div>
+      <div class="item_tai_sao_chon" data-anim="fade-up" data-delay="400">
+        <div class="icon_item"><img src="assets/img/icon_tsc_5.png" alt="+5000 Khách hàng" loading="lazy"></div>
+        <p class="title_item">+<span data-count="5000">0</span></p>
+        <p class="content_item">Khách hàng tin tưởng &amp; sử dụng</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS (TIN TỨC MỚI NHẤT) ============ -->
+<section class="section_blog section-pad" id="news">
+  <div class="container-xl">
+    <div class="d-flex justify-content-between align-items-end mb-4" data-anim="fade-up">
+      <div>
+        <span class="sub-title-tag">Tin tức</span>
+        <h2 class="title_blogs title_font mb-0">TIN TỨC MỚI NHẤT</h2>
+      </div>
+      <a href="#news" class="see_more d-none d-sm-inline-flex">Xem tất cả <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Article 1 -->
+      <div class="col-md-6 col-lg-3" data-anim="fade-up">
+        <div class="item-blog">
+          <div class="block-thumb">
+            <a href="#news"><img src="assets/img/blog_1.jpg" alt="Xu hướng Nổi bật trong Logistics Toàn cầu" loading="lazy"></a>
+            <div class="time_arti">02/06/2025</div>
+          </div>
+          <div class="block-content">
+            <h3><a href="#news">Xu hướng Nổi bật trong Logistics Toàn cầu: Định hình Tương lai Chuỗi Cung ứng</a></h3>
+            <div class="line"></div>
+            <p class="justify">Ngành logistics toàn cầu đang chứng kiến những thay đổi sâu rộng, được thúc đẩy bởi tiến bộ công nghệ, sự thay đổi trong kỳ vọng của khách hàng và nhận thức về môi trường.</p>
+            <a class="see_more" href="#news">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Article 2 -->
+      <div class="col-md-6 col-lg-3" data-anim="fade-up" data-delay="100">
+        <div class="item-blog">
+          <div class="block-thumb">
+            <a href="#news"><img src="assets/img/blog_2.jpg" alt="Tối ưu hóa Hiệu quả Vận tải trong Logistics" loading="lazy"></a>
+            <div class="time_arti">02/06/2025</div>
+          </div>
+          <div class="block-content">
+            <h3><a href="#news">Tối ưu hóa Hiệu quả Vận tải trong Logistics: Chìa khóa tăng trưởng bền vững</a></h3>
+            <div class="line"></div>
+            <p class="justify">Trong bối cảnh kinh doanh cạnh tranh ngày nay, hiệu quả vận tải là một trong những yếu tố then chốt quyết định sự thành công của chuỗi cung ứng.</p>
+            <a class="see_more" href="#news">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Article 3 -->
+      <div class="col-md-6 col-lg-3" data-anim="fade-up" data-delay="200">
+        <div class="item-blog">
+          <div class="block-thumb">
+            <a href="#news"><img src="assets/img/blog_3.jpg" alt="Logistics ngược" loading="lazy"></a>
+            <div class="time_arti">02/06/2025</div>
+          </div>
+          <div class="block-content">
+            <h3><a href="#news">Logistics ngược: Xu hướng quan trọng trong chuỗi cung ứng hiện đại</a></h3>
+            <div class="line"></div>
+            <p class="justify">Khi nhắc đến chuỗi cung ứng, người ta thường hình dung về dòng chảy hàng hóa từ nhà sản xuất đến người tiêu dùng. Tuy nhiên logistics ngược đang nổi lên mạnh mẽ.</p>
+            <a class="see_more" href="#news">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Article 4 -->
+      <div class="col-md-6 col-lg-3" data-anim="fade-up" data-delay="300">
+        <div class="item-blog">
+          <div class="block-thumb">
+            <a href="#news"><img src="assets/img/blog_4.jpg" alt="Động lực tăng trưởng" loading="lazy"></a>
+            <div class="time_arti">02/06/2025</div>
+          </div>
+          <div class="block-content">
+            <h3><a href="#news">Ngành Logistics: Động lực tăng trưởng và những thách thức mới</a></h3>
+            <div class="line"></div>
+            <p class="justify">Ngành logistics toàn cầu đang trải qua giai đoạn chuyển mình mạnh mẽ, vừa là động lực chính cho sự phát triển kinh tế vừa đối mặt với nhiều cơ hội mới.</p>
+            <a class="see_more" href="#news">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ (CÂU HỎI THƯỜNG GẶP) ============ -->
+<section class="section_faq section-pad" id="faq">
+  <div class="container-xl">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-anim="fade-right">
+        <div class="faq-box-left">
+          <div class="sub-title-tag">
+            <img src="assets/img/icon_sub_faq.png" alt="FAQ" width="20" height="20">
+            <span>FAQ?</span>
+          </div>
+          <h2 class="title_choose title_font mb-3">Câu hỏi thường gặp</h2>
+          <p class="lead-p mb-4">Các thắc mắc phổ biến nhất của doanh nghiệp và khách hàng khi lựa chọn dịch vụ vận chuyển và chuỗi cung ứng tại Sudes Logistics.</p>
+
+          <ul class="faq-list">
+            <!-- FAQ 1 -->
+            <li class="active">
+              <h3>
+                <span>01. Tôi cần chuẩn bị gì để gửi hàng?</span>
+                <svg viewBox="0 0 15 15" fill="none"><path d="M7.98691 14.6893L14.4153 0.761055C14.516 0.539274 14.456 0.274638 14.2653 0.120356C14.0746 -0.0349973 13.8036 -0.0403543 13.6075 0.107499L7.50049 4.68774L1.3935 0.107499C1.19743 -0.0403548 0.925294 -0.0349978 0.735656 0.119284C0.606016 0.22321 0.536375 0.378563 0.536375 0.53606C0.536375 0.612129 0.552446 0.688199 0.585659 0.759983L7.01407 14.6882C7.10193 14.8789 7.29157 15 7.50049 15C7.70941 15 7.89905 14.8789 7.98691 14.6893Z" fill="white"/></svg>
+              </h3>
+              <div class="content-faq">Bạn chỉ cần cung cấp thông tin chi tiết về loại hàng hóa, số lượng, kích thước, địa chỉ nhận và giao hàng. Nếu có yêu cầu đặc biệt như bảo quản lạnh, đóng gói riêng hay thời gian giao nhận cụ thể, hãy thông báo trước để chúng tôi chuẩn bị dịch vụ phù hợp nhất.</div>
+            </li>
+            <!-- FAQ 2 -->
+            <li>
+              <h3>
+                <span>02. Thời gian vận chuyển mất bao lâu?</span>
+                <svg viewBox="0 0 15 15" fill="none"><path d="M7.98691 14.6893L14.4153 0.761055C14.516 0.539274 14.456 0.274638 14.2653 0.120356C14.0746 -0.0349973 13.8036 -0.0403543 13.6075 0.107499L7.50049 4.68774L1.3935 0.107499C1.19743 -0.0403548 0.925294 -0.0349978 0.735656 0.119284C0.606016 0.22321 0.536375 0.378563 0.536375 0.53606C0.536375 0.612129 0.552446 0.688199 0.585659 0.759983L7.01407 14.6882C7.10193 14.8789 7.29157 15 7.50049 15C7.70941 15 7.89905 14.8789 7.98691 14.6893Z" fill="currentColor"/></svg>
+              </h3>
+              <div class="content-faq">Thời gian vận chuyển phụ thuộc vào khoảng cách, loại dịch vụ (tiêu chuẩn, nhanh, tiết kiệm), và điều kiện giao thông. Trong nước thường mất từ 1–3 ngày, quốc tế có thể kéo dài 5–10 ngày. Với hàng gấp, chúng tôi có các giải pháp vận chuyển ưu tiên nhanh chóng và đúng hẹn.</div>
+            </li>
+            <!-- FAQ 3 -->
+            <li>
+              <h3>
+                <span>03. Làm thế nào để biết tình trạng đơn hàng?</span>
+                <svg viewBox="0 0 15 15" fill="none"><path d="M7.98691 14.6893L14.4153 0.761055C14.516 0.539274 14.456 0.274638 14.2653 0.120356C14.0746 -0.0349973 13.8036 -0.0403543 13.6075 0.107499L7.50049 4.68774L1.3935 0.107499C1.19743 -0.0403548 0.925294 -0.0349978 0.735656 0.119284C0.606016 0.22321 0.536375 0.378563 0.536375 0.53606C0.536375 0.612129 0.552446 0.688199 0.585659 0.759983L7.01407 14.6882C7.10193 14.8789 7.29157 15 7.50049 15C7.70941 15 7.89905 14.8789 7.98691 14.6893Z" fill="currentColor"/></svg>
+              </h3>
+              <div class="content-faq">Chúng tôi sẽ thông báo cho bạn về tình trạng đơn hàng qua email hoặc điện thoại khi có bất kỳ cập nhật quan trọng nào. Bạn có thể liên hệ trực tiếp với chúng tôi để yêu cầu thông tin chi tiết về tiến độ giao hàng.</div>
+            </li>
+            <!-- FAQ 4 -->
+            <li>
+              <h3>
+                <span>04. Phí vận chuyển được tính như thế nào?</span>
+                <svg viewBox="0 0 15 15" fill="none"><path d="M7.98691 14.6893L14.4153 0.761055C14.516 0.539274 14.456 0.274638 14.2653 0.120356C14.0746 -0.0349973 13.8036 -0.0403543 13.6075 0.107499L7.50049 4.68774L1.3935 0.107499C1.19743 -0.0403548 0.925294 -0.0349978 0.735656 0.119284C0.606016 0.22321 0.536375 0.378563 0.536375 0.53606C0.536375 0.612129 0.552446 0.688199 0.585659 0.759983L7.01407 14.6882C7.10193 14.8789 7.29157 15 7.50049 15C7.70941 15 7.89905 14.8789 7.98691 14.6893Z" fill="currentColor"/></svg>
+              </h3>
+              <div class="content-faq">Chi phí vận chuyển dựa trên nhiều yếu tố như trọng lượng, kích thước hàng, loại hàng (thông thường hay đặc biệt), quãng đường di chuyển và hình thức vận chuyển. Chúng tôi luôn cung cấp bảng giá rõ ràng, minh bạch.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Video Right Box -->
+      <div class="col-lg-6" data-anim="fade-left">
+        <div class="img_thm">
+          <img src="assets/img/bg_video_why.jpg" alt="Video Sudes Logistics" width="975" height="677" loading="lazy">
+          <div class="icon_video" id="openVideoBtn" data-video="9Jhuvm0-9F4" title="Xem video giới thiệu">
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Popup Modal -->
+<div class="popup_video" id="popupVideo">
+  <div class="popup_video_inner">
+    <span class="close_video" id="closeVideoBtn">&times;</span>
+    <div class="ratio ratio-16x9" id="videoIframeContainer"></div>
+  </div>
+</div>
+
+<!-- ============ TESTIMONIALS (ĐÁNH GIÁ KHÁCH HÀNG) ============ -->
+<section class="section_danh_gia section-pad" id="testimonials">
+  <div class="container-xl">
+    <div class="text-center mb-5" data-anim="fade-up">
+      <div class="sub-title-tag">
+        <img src="assets/img/icon_sub_feedback.png" alt="Feedback" width="20" height="20">
+        <span>Feedback</span>
+      </div>
+      <h2 class="title_danh_gia title_font">ĐÁNH GIÁ KHÁCH HÀNG</h2>
+    </div>
+
+    <!-- Swiper Testimonial Slider -->
+    <div class="swiper" id="feedbackSwiper">
+      <div class="swiper-wrapper pb-5">
+        <!-- Review 1 -->
+        <div class="swiper-slide">
+          <div class="review_box">
+            <div class="tang_1_feed">
+              <div class="review_img">
+                <img src="assets/img/image_danh_gia_1.jpg" alt="Nguyễn Trung Anh" width="70" height="70" loading="lazy">
+              </div>
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+            </div>
+            <p class="content_review">"Sudes Logistic là đối tác không thể thiếu trong chuỗi cung ứng của chúng tôi. Dịch vụ nhanh, chuyên nghiệp và luôn đúng cam kết."</p>
+            <h3 class="name_review">Nguyễn Trung Anh</h3>
+            <p class="job_review">Giám đốc Logistics – Công ty cổ phần May mặc K&amp;K</p>
+            <div class="icon_gach"><img src="assets/img/gach2.png" alt="quote icon"></div>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="swiper-slide">
+          <div class="review_box">
+            <div class="tang_1_feed">
+              <div class="review_img">
+                <img src="assets/img/image_danh_gia_2.jpg" alt="Nguyễn Ngọc Sơn" width="70" height="70" loading="lazy">
+              </div>
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p class="content_review">"Tôi ấn tượng với cách Sudes xử lý linh hoạt và kịp thời trong các tình huống khẩn. Đội ngũ hỗ trợ rất nhiệt tình và bài bản."</p>
+            <h3 class="name_review">Nguyễn Ngọc Sơn</h3>
+            <p class="job_review">Quản lý Vận hành – Công ty CP Thực phẩm Đông Nam</p>
+            <div class="icon_gach"><img src="assets/img/gach2.png" alt="quote icon"></div>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="swiper-slide">
+          <div class="review_box">
+            <div class="tang_1_feed">
+              <div class="review_img">
+                <img src="assets/img/image_danh_gia_3.jpg" alt="Lê Quang Hải" width="70" height="70" loading="lazy">
+              </div>
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p class="content_review">"Chúng tôi đã làm việc với nhiều đơn vị logistics, nhưng Sudes là cái tên tạo được sự tin tưởng lâu dài nhờ phong cách làm việc rõ ràng và hiệu quả."</p>
+            <h3 class="name_review">Lê Quang Hải</h3>
+            <p class="job_review">Trưởng phòng Mua hàng – Công ty TNHH Thiết bị Công nghiệp HT</p>
+            <div class="icon_gach"><img src="assets/img/gach2.png" alt="quote icon"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND / PARTNERS SECTION ============ -->
+<section class="section_brand" id="gallery">
   <div class="container-xl">
     <div class="row align-items-center g-5">
-      <div class="col-lg-5" data-anim="fade-right">
-        <span class="section-tag">Tại sao chọn chúng tôi?</span>
-        <h2 class="section-title">VỚI 10 NĂM KINH NGHIỆM</h2>
-        <p class="lead-text">Trở thành công ty hậu cần chuỗi cung ứng được ưa thích nhất trên thế giới vì hiểu biết sâu sắc, chất lượng dịch vụ tốt nhất, đổi mới và tăng trưởng không ngừng cho doanh nghiệp và xã hội.</p>
+      <div class="col-lg-6" data-anim="fade-right">
+        <span class="title">Cùng Sudes Logistic tạo nên giá trị bền vững!</span>
+        <span class="content">Tại Sudes Logistic, chúng tôi luôn đề cao tinh thần hợp tác cùng phát triển. Với mỗi đối tác, chúng tôi cam kết minh bạch, đồng hành dài hạn và cùng xây dựng giải pháp logistics hiệu quả, linh hoạt theo từng nhu cầu cụ thể. Bằng kinh nghiệm vận hành và mạng lưới kết nối rộng khắp, Sudes Logistic không chỉ hỗ trợ tối ưu chi phí mà còn góp phần nâng cao năng lực cạnh tranh và phát triển bền vững cho cả hai bên.</span>
+
+        <!-- 20 Partner Brand Logos from Demo -->
+        <ul class="brand-grid">
+          <li><a href="#gallery" title="Đối tác 1"><img src="assets/img/thuonghieu_1.jpg" alt="Đối tác 1" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 2"><img src="assets/img/thuonghieu_2.jpg" alt="Đối tác 2" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 3"><img src="assets/img/thuonghieu_3.jpg" alt="Đối tác 3" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 4"><img src="assets/img/thuonghieu_4.jpg" alt="Đối tác 4" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 5"><img src="assets/img/thuonghieu_5.jpg" alt="Đối tác 5" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 6"><img src="assets/img/thuonghieu_6.jpg" alt="Đối tác 6" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 7"><img src="assets/img/thuonghieu_7.jpg" alt="Đối tác 7" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 8"><img src="assets/img/thuonghieu_8.jpg" alt="Đối tác 8" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 9"><img src="assets/img/thuonghieu_9.jpg" alt="Đối tác 9" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 10"><img src="assets/img/thuonghieu_10.jpg" alt="Đối tác 10" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 11"><img src="assets/img/thuonghieu_11.jpg" alt="Đối tác 11" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 12"><img src="assets/img/thuonghieu_12.jpg" alt="Đối tác 12" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 13"><img src="assets/img/thuonghieu_13.jpg" alt="Đối tác 13" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 14"><img src="assets/img/thuonghieu_14.jpg" alt="Đối tác 14" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 15"><img src="assets/img/thuonghieu_15.jpg" alt="Đối tác 15" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 16"><img src="assets/img/thuonghieu_16.jpg" alt="Đối tác 16" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 17"><img src="assets/img/thuonghieu_17.jpg" alt="Đối tác 17" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 18"><img src="assets/img/thuonghieu_18.jpg" alt="Đối tác 18" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 19"><img src="assets/img/thuonghieu_19.jpg" alt="Đối tác 19" loading="lazy"></a></li>
+          <li><a href="#gallery" title="Đối tác 20"><img src="assets/img/thuonghieu_20.jpg" alt="Đối tác 20" loading="lazy"></a></li>
+        </ul>
       </div>
-      <div class="col-lg-7">
-        <div class="row g-4">
-          <div class="col-6 col-md-4" data-anim="fade-up"><div class="stat-card"><i class="bi bi-boxes"></i><strong data-count="30">0</strong><h4>Cụm kho</h4><p>Trên toàn quốc</p></div></div>
-          <div class="col-6 col-md-4" data-anim="fade-up" data-delay="100"><div class="stat-card"><i class="bi bi-archive"></i><strong data-count="300000">0</strong><h4>M³</h4><p>Tổng sức chứa</p></div></div>
-          <div class="col-6 col-md-4" data-anim="fade-up" data-delay="200"><div class="stat-card"><i class="bi bi-people"></i><strong data-count="250">0</strong><h4>Nhân viên</h4><p>Cán bộ nhân viên</p></div></div>
-          <div class="col-6 col-md-4" data-anim="fade-up" data-delay="100"><div class="stat-card"><i class="bi bi-truck"></i><strong data-count="100">0</strong><h4>Xe tải</h4><p>Chuyên dụng</p></div></div>
-          <div class="col-6 col-md-4" data-anim="fade-up" data-delay="200"><div class="stat-card"><i class="bi bi-emoji-smile"></i><strong data-count="5000">0</strong><span>+</span><p>Khách hàng tin tưởng &amp; sử dụng dịch vụ</p></div></div>
+
+      <div class="col-lg-6" data-anim="fade-left">
+        <div class="banner_thuong_hieu">
+          <img src="assets/img/thuonghieu.png" alt="Sudes Logistics Bền Vững" width="1100" height="1050" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ NEWS ============ -->
-<section class="news section-pad" id="news">
-  <div class="container-xl">
-    <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3" data-anim="fade-up">
-      <div>
-        <span class="section-tag">Tin tức</span>
-        <h2 class="section-title mb-0">TIN TỨC MỚI NHẤT</h2>
-      </div>
-      <a href="#news" class="link-more">Xem tất cả <i class="bi bi-arrow-right"></i></a>
+<!-- ============ CTA SECTION ============ -->
+<section class="section_contact container-xl" id="contact">
+  <div class="contact-box" data-anim="zoom-in">
+    <div class="cont_box_1">
+      <span class="sub_title">Kết nối với chúng tôi</span>
+      <h2 class="title_ct">Giải pháp vận chuyển tối ưu, chỉ cách bạn một cú nhấp chuột!</h2>
     </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4" data-anim="fade-up">
-        <article class="news-card">
-          <div class="news-thumb thumb-1"><span>Logistics</span></div>
-          <div class="news-body">
-            <time>02/06/2025</time>
-            <h3>Xu hướng nổi bật trong Logistics toàn cầu: Định hình tương lai chuỗi cung ứng</h3>
-            <p>Tiến bộ công nghệ và kỳ vọng khách hàng đang thay đổi cục diện ngành logistics toàn cầu.</p>
-            <a href="#news" class="news-link">Đọc thêm <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-      <div class="col-md-6 col-lg-4" data-anim="fade-up" data-delay="120">
-        <article class="news-card">
-          <div class="news-thumb thumb-2"><span>Vận tải</span></div>
-          <div class="news-body">
-            <time>02/06/2025</time>
-            <h3>Tối ưu hóa hiệu quả vận tải trong logistics: Chìa khóa tăng trưởng bền vững</h3>
-            <p>Tối ưu vận tải giúp doanh nghiệp tiết kiệm chi phí và nâng cao chất lượng dịch vụ.</p>
-            <a href="#news" class="news-link">Đọc thêm <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-      <div class="col-md-6 col-lg-4" data-anim="fade-up" data-delay="240">
-        <article class="news-card">
-          <div class="news-thumb thumb-3"><span>Chuỗi cung ứng</span></div>
-          <div class="news-body">
-            <time>02/06/2025</time>
-            <h3>Logistics ngược: Xu hướng quan trọng trong chuỗi cung ứng hiện đại</h3>
-            <p>Quản lý dòng chảy sản phẩm từ điểm tiêu dùng quay ngược trở lại điểm xuất phát.</p>
-            <a href="#news" class="news-link">Đọc thêm <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="faq section-pad" id="faq">
-  <div class="container-xl">
-    <div class="row g-5">
-      <div class="col-lg-4" data-anim="fade-right">
-        <span class="section-tag">FAQ?</span>
-        <h2 class="section-title">Câu hỏi thường gặp</h2>
-        <p class="lead-text">Chưa tìm thấy câu trả lời? Liên hệ với chúng tôi để được tư vấn trực tiếp.</p>
-        <a href="#contact" class="btn btn-brand">Liên hệ ngay</a>
-      </div>
-      <div class="col-lg-8" data-anim="fade-left">
-        <div class="accordion faq-accordion" id="faqAccordion">
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">01. Tôi cần chuẩn bị gì để gửi hàng?</button></h3>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Bạn chỉ cần cung cấp thông tin chi tiết về loại hàng hóa, số lượng, kích thước, địa chỉ nhận và giao hàng. Nếu có yêu cầu đặc biệt như bảo quản lạnh, đóng gói riêng hay thời gian giao nhận cụ thể, hãy thông báo trước để chúng tôi chuẩn bị dịch vụ phù hợp nhất.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">02. Thời gian vận chuyển mất bao lâu?</button></h3>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Thời gian vận chuyển phụ thuộc vào khoảng cách, loại dịch vụ (tiêu chuẩn, nhanh, tiết kiệm) và điều kiện giao thông. Trong nước thường mất từ 1–3 ngày, quốc tế có thể kéo dài 5–10 ngày. Với hàng gấp, chúng tôi có giải pháp vận chuyển ưu tiên nhanh chóng và đúng hẹn.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">03. Làm thế nào để biết tình trạng đơn hàng của tôi?</button></h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Chúng tôi sẽ thông báo cho bạn về tình trạng đơn hàng qua email hoặc điện thoại khi có cập nhật quan trọng. Bạn cũng có thể liên hệ trực tiếp để yêu cầu thông tin chi tiết về tiến độ giao hàng.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">04. Phí vận chuyển được tính như thế nào?</button></h3>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Chi phí dựa trên trọng lượng, kích thước, loại hàng, quãng đường và hình thức vận chuyển (bộ, thủy, hàng không). Chúng tôi luôn cung cấp bảng giá rõ ràng, minh bạch và hỗ trợ báo giá nhanh theo yêu cầu.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials section-pad" id="testimonials">
-  <div class="container-xl">
-    <div class="section-head text-center" data-anim="fade-up">
-      <span class="section-tag">Feedback</span>
-      <h2 class="section-title">ĐÁNH GIÁ KHÁCH HÀNG</h2>
-    </div>
-    <div id="testiCarousel" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="7000">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <figure class="testi-card mx-auto">
-            <i class="bi bi-quote quote-icon"></i>
-            <blockquote>Sudes Logistic là đối tác không thể thiếu trong chuỗi cung ứng của chúng tôi. Dịch vụ nhanh, chuyên nghiệp và luôn đúng cam kết.</blockquote>
-            <figcaption><strong>Nguyễn Trung Anh</strong><span>Giám đốc Logistics – Công ty CP May mặc K&amp;K</span></figcaption>
-          </figure>
-        </div>
-        <div class="carousel-item">
-          <figure class="testi-card mx-auto">
-            <i class="bi bi-quote quote-icon"></i>
-            <blockquote>Tôi ấn tượng với cách Sudes xử lý linh hoạt và kịp thời trong các tình huống khẩn. Đội ngũ hỗ trợ rất nhiệt tình và bài bản.</blockquote>
-            <figcaption><strong>Nguyễn Ngọc Sơn</strong><span>Quản lý Vận hành – Công ty CP Thực phẩm Đông Nam</span></figcaption>
-          </figure>
-        </div>
-        <div class="carousel-item">
-          <figure class="testi-card mx-auto">
-            <i class="bi bi-quote quote-icon"></i>
-            <blockquote>Chúng tôi đã làm việc với nhiều đơn vị logistics, nhưng Sudes là cái tên tạo được sự tin tưởng lâu dài nhờ phong cách làm việc rõ ràng và hiệu quả.</blockquote>
-            <figcaption><strong>Lê Quang Hải</strong><span>Trưởng phòng Mua hàng – Công ty TNHH Thiết bị Công nghiệp HT</span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="carousel-indicators testi-indicators">
-        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="2"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARTNERS ============ -->
-<section class="partners section-pad-sm" id="gallery">
-  <div class="container-xl">
-    <div class="partner-track" data-anim="fade-up">
-      <div class="partner-item">Đối tác 1</div>
-      <div class="partner-item">Đối tác 2</div>
-      <div class="partner-item">Đối tác 3</div>
-      <div class="partner-item">Đối tác 4</div>
-      <div class="partner-item">Đối tác 5</div>
-      <div class="partner-item">Đối tác 6</div>
-      <div class="partner-item">Đối tác 7</div>
-      <div class="partner-item">Đối tác 8</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta" id="contact">
-  <div class="container-xl">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-7" data-anim="fade-right">
-        <span class="section-tag light">Kết nối với chúng tôi</span>
-        <h2 class="cta-title">Giải pháp vận chuyển tối ưu, chỉ cách bạn một cú nhấp chuột!</h2>
-      </div>
-      <div class="col-lg-5 text-lg-end" data-anim="fade-left">
-        <a href="tel:19006750" class="btn btn-light btn-lg me-2 mb-2"><i class="bi bi-telephone-fill"></i> 1900 6750</a>
-        <a href="#" class="btn btn-outline-light btn-lg mb-2">Liên hệ ngay</a>
-      </div>
+    <div class="cont_box_2 d-flex flex-wrap gap-3">
+      <a href="tel:19006750" class="btn btn-light rounded-pill px-4 py-3 fw-bold text-danger">
+        <i class="bi bi-telephone-fill me-2"></i> 1900 6750
+      </a>
+      <a href="#contact" class="btn_contact_now" title="Liên hệ ngay">
+        <span>Liên hệ ngay</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.08749 2.95179C0.941661 2.36929 1.14916 1.75596 1.61749 1.38012C2.08583 1.00429 2.72999 0.935957 3.26666 1.20429L18.1083 8.62512C18.6292 8.88512 18.9583 9.41762 18.9583 10.0001C18.9583 10.5826 18.6292 11.1151 18.1083 11.3751L3.26666 18.796C2.72999 19.0643 2.08583 18.996 1.61749 18.6201C1.14916 18.2443 0.941661 17.631 1.08749 17.0485L2.64166 10.8335L11.6667 10.0001L2.64166 9.16679L1.08749 2.95179Z" fill="black"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
@@ -376,81 +784,165 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="site-footer">
+<footer class="footer">
   <div class="container-xl">
-    <div class="row g-4 pb-4">
-      <div class="col-lg-4">
-        <a class="brand brand-light mb-3" href="#top">
-          <span class="brand-mark"><i class="bi bi-truck"></i></span>
-          <span class="brand-text">SUDES<small>LOGISTICS</small></span>
+    <div class="row g-4">
+      <!-- Col 1: About & Hours -->
+      <div class="col-12 col-lg-4">
+        <a href="#top" class="logo_foo d-inline-block">
+          <img src="assets/img/logo.png" alt="Sudes Logistics" width="220">
         </a>
-        <p class="footer-desc">Đơn vị cung cấp giải pháp vận tải và hậu cần chuyên nghiệp, linh hoạt và tối ưu chi phí. Chúng tôi đồng hành cùng doanh nghiệp trong việc quản lý chuỗi cung ứng hiệu quả, từ vận chuyển nội địa, quốc tế đến kho bãi và khai báo hải quan.</p>
-        <div class="socials">
-          <a href="https://www.facebook.com/sapowebvietnam/" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
-          <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.youtube.com/" aria-label="Youtube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
-          <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+        <div class="des_foo">
+          Đơn vị cung cấp giải pháp vận tải và hậu cần chuyên nghiệp, linh hoạt và tối ưu chi phí. Chúng tôi đồng hành cùng doanh nghiệp trong việc quản lý chuỗi cung ứng hiệu quả, từ vận chuyển nội địa, quốc tế đến kho bãi và khai báo hải quan.
+        </div>
+        <div class="timebox_food">
+          <p class="title_box">Thời gian làm việc</p>
+          <div class="item_info_time">
+            <i class="bi bi-calendar3 text-danger"></i>
+            <span>Từ thứ 2 đến thứ 7 hàng tuần (Nghỉ chủ nhật)</span>
+          </div>
+          <div class="item_info_time">
+            <i class="bi bi-clock-history text-danger"></i>
+            <span>8h00 - 22h00</span>
+          </div>
+          <div class="item_info_time">
+            <i class="bi bi-telephone-fill text-danger"></i>
+            <a href="tel:19006750" class="text-white fw-bold">1900 6750</a>
+          </div>
+        </div>
+        <div class="social-footer">
+          <div class="social">
+            <a href="https://www.facebook.com/sapowebvietnam/" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
         </div>
       </div>
-      <div class="col-6 col-lg-2">
-        <h4 class="footer-title">Thông tin</h4>
-        <ul class="footer-links">
-          <li><a href="#top">Trang chủ</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#history">Lịch sử hình thành</a></li>
-          <li><a href="#services">Dịch vụ</a></li>
-          <li><a href="#news">Tin tức</a></li>
-          <li><a href="#faq">Câu hỏi thường gặp</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-        </ul>
+
+      <!-- Col 2 & 3: Menus -->
+      <div class="col-12 col-lg-5">
+        <div class="row">
+          <div class="col-6 link-list">
+            <h4 class="title-menu">Thông tin</h4>
+            <ul class="list-menu">
+              <li><a href="#top">Trang chủ</a></li>
+              <li><a href="#about">Giới thiệu</a></li>
+              <li><a href="#history">Lịch sử hình thành</a></li>
+              <li><a href="#services">Dịch vụ</a></li>
+              <li><a href="#news">Tin tức</a></li>
+              <li><a href="#gallery">Thư viện</a></li>
+              <li><a href="#faq">Câu hỏi thường gặp</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="col-6 link-list">
+            <h4 class="title-menu">Dịch vụ</h4>
+            <ul class="list-menu">
+              <li><a href="#services">Đại lý Hải quan</a></li>
+              <li><a href="#services">Bảo hiểm Hàng hóa</a></li>
+              <li><a href="#services">Vận chuyển Hàng không</a></li>
+              <li><a href="#services">Vận chuyển Đường biển</a></li>
+              <li><a href="#services">Vận chuyển Nội bộ</a></li>
+              <li><a href="#services">Nâng hạ - Cẩu hàng</a></li>
+              <li><a href="#services">Cho thuê Kho bãi</a></li>
+              <li><a href="#services">Chứng từ &amp; Tư vấn XNK</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-lg-3">
-        <h4 class="footer-title">Dịch vụ</h4>
-        <ul class="footer-links">
-          <li><a href="#services">Đại lý Hải quan</a></li>
-          <li><a href="#services">Bảo hiểm Hàng hóa</a></li>
-          <li><a href="#services">Vận chuyển Hàng không Quốc tế</a></li>
-          <li><a href="#services">Vận chuyển Đường biển Quốc tế</a></li>
-          <li><a href="#services">Vận chuyển Nội bộ</a></li>
-          <li><a href="#services">Cho thuê Kho bãi &amp; Phân phối</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3">
-        <h4 class="footer-title">Thời gian làm việc</h4>
-        <p class="footer-text"><i class="bi bi-clock"></i> Từ thứ 2 đến thứ 7 hàng tuần (Nghỉ chủ nhật)<br><strong>8h00 - 22h00</strong></p>
-        <p class="footer-text"><i class="bi bi-telephone"></i> <a href="tel:19006750">1900 6750</a></p>
+
+      <!-- Col 4: Image Gallery -->
+      <div class="col-12 col-lg-3">
+        <h4 class="title-menu">Hình ảnh của chúng tôi</h4>
+        <div class="album_box">
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 1">
+            <img src="assets/img/payment_1.jpg" alt="Sudes logistics 1" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 2">
+            <img src="assets/img/payment_2.jpg" alt="Sudes logistics 2" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 3">
+            <img src="assets/img/payment_3.jpg" alt="Sudes logistics 3" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 4">
+            <img src="assets/img/payment_4.jpg" alt="Sudes logistics 4" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 5">
+            <img src="assets/img/payment_5.jpg" alt="Sudes logistics 5" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+          <a href="#gallery" class="item_album" title="Hình ảnh Sudes 6">
+            <img src="assets/img/payment_6.jpg" alt="Sudes logistics 6" loading="lazy">
+            <span class="opci_album"><i class="bi bi-plus-circle text-white fs-4"></i></span>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="mb-0">© Bản quyền thuộc về <strong>Sudes Team</strong></p>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <span>© Bản quyền thuộc về <b>Sudes Team</b> | Cung cấp bởi <a href="https://www.sapo.vn/" target="_blank" rel="noopener">Sapo</a></span>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- ============ FLOATING: BACK TO TOP (only) ============ -->
-<button class="back-to-top" id="backToTop" type="button" aria-label="Lên đầu trang">
-  <i class="bi bi-chevron-up"></i>
+<!-- ============ FLOATING WIDGETS ============ -->
+
+<!-- 1. BACK TO TOP (Single arrow button requested) -->
+<button class="backtop" id="backToTop" type="button" aria-label="Lên đầu trang" title="Lên đầu trang">
+  <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z"></path>
+  </svg>
 </button>
 
-<!-- ============ GTRANSLATE (VI default / EN) ============ -->
-<div class="gtranslate_wrapper"></div>
+<!-- 2. LANGUAGE SWITCHER (popup-ngonngu with GTranslate Integration) -->
+<div class="popup-ngonngu" id="popupNgonngu">
+  <div class="icon" id="toggleLangDropdown" title="Chọn ngôn ngữ / Select language">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">
+      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5H4.51zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008h2.49zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/>
+    </svg>
+  </div>
+  <ul class="language">
+    <li>
+      <a href="javascript:;" onclick="translatePage('vi');" title="Tiếng Việt">
+        <img width="18" height="12" src="assets/img/vn.png" alt="Tiếng Việt">
+        <span>Tiếng Việt</span>
+      </a>
+    </li>
+    <li>
+      <a href="javascript:;" onclick="translatePage('en');" title="English">
+        <img width="18" height="12" src="assets/img/en.png" alt="English">
+        <span>English</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Hidden GTranslate Widget Container -->
+<div class="gtranslate_wrapper" style="display:none;"></div>
 <script>
   window.gtranslateSettings = {
     default_language: "vi",
     languages: ["vi", "en"],
     wrapper_selector: ".gtranslate_wrapper",
-    float_switcher_open_direction: "top",
-    switcher_horizontal_position: "right",
-    switcher_vertical_position: "top",
     flag_size: 24,
-    alt_flags: {},
-    detect_browser_language: false,
-    custom_css: ".gt_float_switcher{background:#fd5624;border-radius:50%;}"
+    detect_browser_language: false
   };
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+<!-- Scripts: Bootstrap 5.3 & Swiper 11 & Main JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,86 +1,154 @@
-# Sudes Logistics
+# Sudes Logistics Website
 
-Website giới thiệu công ty logistics **Sudes Logistics**, dựng lại theo giao diện demo [themes.sapo.vn/demo/sudes-logistics](https://themes.sapo.vn/demo/sudes-logistics).
+> **Dự án:** Thiết kế & Lập trình Website Logistics – **Sudes Logistics**  
+> **Link Demo chuẩn:** [https://sudes-logistics.mysapo.net/](https://sudes-logistics.mysapo.net/)  
+> **Phiên bản:** 2.0.0 (Production Ready)  
+> **Mục tiêu:** Dựng lại 1:1 theo bản demo gốc của Sapo, tối ưu UI/UX, hỗ trợ đa thiết bị và tích hợp đa ngôn ngữ.
 
-## Công nghệ sử dụng
+---
 
-| Hạng mục | Lựa chọn |
-|---|---|
-| Cấu trúc | HTML5 |
-| Layout / Grid | Bootstrap 5.3 (grid, navbar, carousel, accordion) |
-| Styling | CSS3 thuần (biến CSS, responsive, animation) |
-| Tương tác | JavaScript thuần (IntersectionObserver, count-up, scroll) |
-| Icon | Bootstrap Icons 1.11 |
-| Font | Lexend (Google Fonts) |
-| Đa ngôn ngữ | GTranslate Widget (mặc định Tiếng Việt, chuyển sang English) |
+## 📌 Tổng quan dự án
 
-Dự án là site tĩnh, không cần backend hay database.
+Website **Sudes Logistics** là giải pháp website doanh nghiệp hiện đại dành cho lĩnh vực Logistics, Chuỗi cung ứng, Xuất nhập khẩu và Kho bãi. Toàn bộ giao diện, bố cục (Layout), hệ thống màu nhận diện thương hiệu (`#fd5624` & `#062e39`), hiệu ứng animation, 3D dropdown và các khối nội dung được bám sát 100% theo bản demo.
 
-## Cấu trúc thư mục
+---
 
-```
+## 🚀 Công nghệ sử dụng
+
+| Phân hệ | Công nghệ / Thư viện | Vai trò |
+|---|---|---|
+| **Cấu trúc (Markup)** | HTML5 Semantic | Chuẩn SEO, thẻ ngữ nghĩa (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`) |
+| **Hệ thống Grid & Layout** | Bootstrap 5.3.3 + CSS Grid/Flexbox | Hệ thống lưới responsive 12 cột, offcanvas menu di động, modal |
+| **Styling & Hiệu ứng** | CSS3 Custom Properties (Variables), 3D Transforms, Backdrop Blur | Thiết kế hiệu ứng hover 3D, lật thẻ, viền phát sáng, gradient |
+| **Typography & Font** | Lexend (Google Fonts) | Tương đồng 1:1 phong cách typography hiện đại của bản demo |
+| **Slider & Carousel** | Swiper 11 (CSS & JS) | Slide Hero fade mượt mà và Feedback khách hàng tự động chuyển đổi |
+| **Icons & Ký hiệu** | Bootstrap Icons 1.11 + SVG Vector gốc | Hệ thống icon sắc nét, không vỡ hạt trên màn hình Retina/4K |
+| **Đa ngôn ngữ (i18n)** | GTranslate Widget API | Mặc định Tiếng Việt, tự động dịch toàn trang sang English qua widget góc phải |
+| **Tương tác động (JS)** | Vanilla JavaScript (ES6+) | IntersectionObserver (đếm số, scroll reveal), popup video modal, smooth scroll |
+
+---
+
+## 📂 Cấu trúc thư mục
+
+```text
 sudes-logistics/
-├── index.html            # Trang chính (toàn bộ các section)
-├── README.md
+├── index.html                   # Trang chủ đầy đủ các section theo demo
+├── README.md                    # Tài liệu hướng dẫn chi tiết dự án
+├── push-github.cmd              # Script tự động commit & push lên GitHub
 └── assets/
     ├── css/
-    │   └── style.css     # Giao diện, responsive, animation
+    │   └── style.css            # Toàn bộ CSS giao diện, 3D menu, responsive
     ├── js/
-    │   └── main.js       # Header, back-to-top, reveal, count-up
-    └── img/              # Thư mục ảnh (thêm ảnh thật vào đây)
+    │   └── main.js              # Swiper slider, count-up, back-to-top, video popup
+    └── img/                     # 70+ hình ảnh & icon tải trực tiếp từ bản demo
+        ├── logo.png             # Logo chính Sudes Logistics
+        ├── slider_1.jpg         # Slide 1 Hero
+        ├── slider_2.jpg         # Slide 2 Hero
+        ├── banner_about.jpg     # Ảnh lớn phần Giới thiệu
+        ├── about_icon_1..3.png  # 3 icon đường bộ, hàng không, đường biển
+        ├── quy_trinh_img_1..4   # 4 hình tròn quy trình làm việc
+        ├── dich_vu_img_1..8.jpg # 8 ảnh nền dịch vụ
+        ├── dich_vu_icon_1..8    # 8 icon dịch vụ tương ứng
+        ├── bg_tai_sao_chon.jpg  # Background parallax chỉ số thống kê
+        ├── icon_tsc_1..5.png    # 5 icon kho bãi, thể tích, xe tải, khách hàng
+        ├── blog_1..4.jpg        # 4 ảnh bài viết tin tức
+        ├── bg_video_why.jpg     # Thumbnail video câu hỏi thường gặp
+        ├── image_danh_gia_1..3  # Ảnh đại diện khách hàng đánh giá
+        ├── thuonghieu.png       # Ảnh poster dải đối tác
+        ├── thuonghieu_1..20.jpg # 20 logo thương hiệu đối tác
+        ├── payment_1..6.jpg     # 6 ảnh album thư viện ảnh ở footer
+        ├── vn.png & en.png      # Cờ ngôn ngữ Tiếng Việt & Tiếng Anh
+        └── ...
 ```
 
-## Các section đã có
+---
 
-1. **Header** – logo, menu (có dropdown Dịch vụ), hotline, nút BÁO GIÁ, tìm kiếm, menu hamburger trên mobile/tablet.
-2. **Hero slider** – 2 slide, tự chạy, có indicator.
-3. **Giới thiệu** – thông tin công ty, 3 hình thức vận chuyển, bộ đếm 1500+ đơn hàng.
-4. **Quy trình làm việc** – 4 bước.
-5. **Dịch vụ** – 8 dịch vụ, hiệu ứng lật icon khi hover.
-6. **Tại sao chọn chúng tôi** – 5 chỉ số (kho, sức chứa, nhân viên, xe tải, khách hàng), đếm số khi cuộn tới.
-7. **Tin tức** – 3 bài viết mới nhất.
-8. **FAQ** – accordion 4 câu hỏi.
-9. **Đánh giá khách hàng** – carousel 3 feedback.
-10. **Đối tác** – dải logo đối tác.
-11. **CTA liên hệ** – kêu gọi liên hệ, hotline.
-12. **Footer** – thông tin công ty, menu, dịch vụ, giờ làm việc, mạng xã hội.
+## 🎨 Chi tiết các Section & Tính năng
 
-**Đã loại bỏ theo yêu cầu:** popup quảng cáo ứng dụng Sapo, khối "Team điều hành", nút Liên hệ và nút Messenger.
+1. **Header (2 tầng)**:
+   - **Top bar**: Mạng xã hội (Facebook, Instagram, Zalo, Youtube), giờ làm việc (8h - 22h), Hotline `1900 6750`, email `support@sapo.vn`.
+   - **Main bar**: Logo chính, Navigation menu có **3D transform dropdown** ở mục "Dịch vụ" và "Thư viện", ô tìm kiếm mở rộng (Search dropdown), nút `BÁO GIÁ` icon envelope.
+   - **Mobile Drawer**: Offcanvas sidebar chuẩn mobile thân thiện với ngón tay.
+2. **Hero Slider (Auto chuyển đổi)**:
+   - Tự động chạy với hiệu ứng `crossFade` mượt mà qua thư viện Swiper.
+   - Chữ tiêu đề và nút CTA chạy animation trượt vào ấn tượng.
+3. **Giới thiệu (About Sudes Logistics)**:
+   - Banner hình ảnh lớn, 3 hình thức vận tải (Đường bộ, Hàng không, Đường biển).
+   - Khối thống kê đơn hàng vận chuyển thành công `1500+` có bộ đếm tự tăng số khi cuộn tới.
+4. **Quy trình làm việc (Workflow)**:
+   - 4 bước chuẩn chỉ: Yêu cầu báo giá ➔ Tiếp nhận đơn hàng ➔ Kho bãi lưu trữ ➔ Vận chuyển sản phẩm.
+   - Hiệu ứng hover nổi khối 3D nâng lên (`translateY`).
+5. **Dịch vụ Sudes Logistics (Services)**:
+   - 8 dịch vụ lớn với hình ảnh thực tế chất lượng cao.
+   - Hiệu ứng hover lật 3D icon (`rotateY`) và phóng to hình ảnh nền mượt mà.
+6. **Tại sao chọn chúng tôi (Why Choose Us)**:
+   - Background tối mờ phủ lớp gradient.
+   - 5 khối chỉ số ấn tượng: `30` Cụm kho, `300.000 M³` Sức chứa, `250` Cán bộ nhân viên, `100` Xe tải chuyên dụng, `+5000` Khách hàng tin tưởng.
+7. **Tin tức mới nhất (News / Blog)**:
+   - 4 bài viết thực tế kèm ngày đăng, đoạn trích, liên kết đọc tiếp và hiệu ứng zoom ảnh.
+8. **Câu hỏi thường gặp (FAQ & Video giới thiệu)**:
+   - Accordion 4 câu hỏi thường gặp có đóng/mở mượt mà.
+   - Khung xem video với nút Play có hiệu ứng sóng xung kích (`pulse-ring`), click vào mở Popup Modal xem video YouTube thực tế.
+9. **Đánh giá khách hàng (Feedback)**:
+   - Slider đánh giá khách hàng (K&K, Đông Nam, Thiết bị công nghiệp HT) hiển thị ảnh đại diện, đánh giá số sao và chức danh.
+10. **Đối tác & Giá trị bền vững (Brands)**:
+    - Lưới 20 logo đối tác thực tế từ demo + Poster đối tác Sudes Logistics.
+11. **CTA Kết nối (Contact Callout)**:
+    - Khối dải màu ấn tượng kết nối trực tiếp Hotline `1900 6750` và nút Báo giá nhanh.
+12. **Footer**:
+    - Thông tin liên hệ, menu liên kết, giờ làm việc và bộ sưu tập ảnh `Hình ảnh của chúng tôi` (6 ảnh).
 
-**Giữ lại:** nút mũi tên lên đầu trang (luôn hiển thị khi cuộn xuống, bấm để về đầu trang), nút chọn ngôn ngữ.
+---
 
-## Tính năng nổi bật
+## ⚙️ Các chi tiết tuân thủ theo yêu cầu chỉ đạo
 
-- **Responsive** trên desktop, tablet và mobile (breakpoint của Bootstrap, kèm chỉnh riêng ở `style.css`).
-- **Animation**: hero fade, hiệu ứng xuất hiện khi cuộn (fade up, fade left/right, zoom), hover card nâng lên, đếm số liệu, header đổi bóng khi cuộn.
-- **Nút về đầu trang** smooth scroll.
-- **Đa ngôn ngữ**: mặc định tiếng Việt, người dùng chọn English qua icon địa cầu góc phải.
-- **Tôn trọng `prefers-reduced-motion`**: tắt animation nếu người dùng cài đặt giảm chuyển động.
+- **Loại bỏ theo yêu cầu ảnh gạch chéo**:
+  - ❌ Đã bỏ Popup quảng cáo chuỗi ứng dụng Sapo góc trái dưới màn hình.
+  - ❌ Đã bỏ Section "Team điều hành" (Cùng bạn vượt mọi giới hạn).
+  - ❌ Đã bỏ 2 nút liên hệ và icon Messenger cố định ở góc dưới màn hình.
+- **Giữ lại & Tối ưu hóa**:
+  - ✅ **Nút mũi tên lên đầu trang (`.backtop`)**: Tự động hiện khi cuộn xuống qua 350px, bấm vào cuộn êm (`easeOutCubic`) về vị trí đầu trang.
+  - ✅ **Nút chuyển đổi ngôn ngữ (`.popup-ngonngu`)**: Đặt cố định góc phải màn hình với icon địa cầu màu cam. Khi hover hoặc click sẽ hiển thị 2 lựa chọn **Tiếng Việt** (mặc định) và **English**, tích hợp GTranslate widget tự động dịch toàn bộ nội dung.
 
-## Cách chạy
+---
 
-Không cần cài đặt. Mở `index.html` bằng trình duyệt, hoặc chạy server tĩnh:
+## 💻 Hướng dẫn cài đặt & Khởi chạy
 
+Dự án là Frontend thuần tĩnh (HTML5/CSS3/JavaScript), không cần cài đặt database hay cấu hình backend phức tạp:
+
+### Cách 1: Chạy trực tiếp
+Nhấp đúp chuột vào file `index.html` để mở trong trình duyệt Chrome, Edge, Firefox hoặc Cốc Cốc.
+
+### Cách 2: Chạy qua Local Server
 ```bash
-# Python
+# Sử dụng Python 3
 python -m http.server 8000
 
-# hoặc Node
+# Hoặc dùng Node.js npx serve
 npx serve .
 ```
+Truy cập: `http://localhost:8000`
 
-Sau đó truy cập `http://localhost:8000`.
+### Cách 3: Đẩy mã nguồn lên GitHub
+Trong thư mục dự án có sẵn file tiện ích:
+1. Nhấp đúp chuột vào file `push-github.cmd`
+2. Script sẽ tự động chạy:
+   ```cmd
+   git add .
+   git commit -m "Update sudes-logistics"
+   git push
+   ```
 
-> Lưu ý: widget dịch GTranslate và Google Fonts, Bootstrap, Bootstrap Icons được tải từ CDN, nên cần kết nối internet khi chạy.
+---
 
-## Ghi chú cho lần phát triển tiếp
+## 📱 Độ tương thích & Responsive
 
-- **Ảnh**: giao diện hiện dùng khối màu gradient thay cho ảnh minh họa. Khi có ảnh thật, đặt vào `assets/img/` và thay các `div.news-thumb` / `div.visual-card` bằng thẻ `<img>` hoặc đổi `background-image`.
-- **Logo**: đang dùng icon và chữ trong code. Có thể thay bằng file logo trong `assets/img/`.
-- **Đối tác**: hiện là placeholder "Đối tác 1–8", thay bằng logo thật.
-- **Trang con** (Giới thiệu, Dịch vụ chi tiết, Tin tức, Liên hệ...): hiện các menu trỏ về anchor trên trang chủ, có thể tách thành trang riêng khi cần.
-- **Form báo giá / liên hệ**: chưa có form xử lý; nút BÁO GIÁ hiện đang dẫn tới phần liên hệ.
+- **Desktop & Laptop**: Màn hình siêu nét từ 1200px – 4K.
+- **Tablet**: Tối ưu hiển thị ở kích thước 768px – 1024px (iPad, Galaxy Tab).
+- **Mobile**: Tối ưu hiển thị mượt mà trên iPhone, Android màn hình từ 360px – 430px (Offcanvas menu, slider chạm vuốt).
 
-## Bản quyền
+---
 
-Thiết kế tham khảo theo theme Sudes Logistics của Sapo. Nội dung là nội dung mẫu để phục vụ dự án.
+## 📄 Bản quyền
+Giao diện được lập trình mô phỏng giao diện mẫu Sudes Logistics trên nền tảng Sapo.
+Mã nguồn phục vụ cho mục đích học tập và triển khai dự án thực tế.
