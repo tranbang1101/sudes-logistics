@@ -9,21 +9,30 @@
 
   // 1. Initialize Hero Swiper with crossfade & auto-play
   let heroSwiper = null;
-  if (typeof Swiper !== 'undefined' && document.getElementById('heroSwiper')) {
-    heroSwiper = new Swiper('#heroSwiper', {
+  const heroSwiperEl = document.querySelector('.hero .swiper') || document.getElementById('heroSwiper');
+  if (typeof Swiper !== 'undefined' && heroSwiperEl) {
+    heroSwiper = new Swiper(heroSwiperEl, {
       loop: true,
       effect: 'fade',
       fadeEffect: {
         crossFade: true
       },
-      speed: 1600,
+      speed: 1200,
       autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false
       },
       pagination: {
-        el: '.hero-pagination',
+        el: '.hero-pagination, .swiper-pagination',
         clickable: true
+      },
+      on: {
+        slideChangeTransitionEnd: function () {
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+          }
+        }
       }
     });
   }
@@ -163,7 +172,17 @@
     });
   }
 
-  // 8. Scroll-Reveal Animations (IntersectionObserver)
+  // 8. Initialize AOS Animation Library
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+  }
+
+  // Fallback Scroll-Reveal Animations (IntersectionObserver for data-anim if present)
   const animEls = document.querySelectorAll('[data-anim]');
   animEls.forEach((el) => {
     const delay = el.getAttribute('data-delay');

@@ -19,12 +19,13 @@ Website **Sudes Logistics** là giải pháp website doanh nghiệp hiện đạ
 |---|---|---|
 | **Cấu trúc (Markup)** | HTML5 Semantic | Chuẩn SEO, thẻ ngữ nghĩa (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`) |
 | **Hệ thống Grid & Layout** | Bootstrap 5.3.3 + CSS Grid/Flexbox | Hệ thống lưới responsive 12 cột, offcanvas menu di động, modal |
-| **Styling & Hiệu ứng** | CSS3 Custom Properties (Variables), 3D Transforms, Backdrop Blur | Thiết kế hiệu ứng hover 3D, lật thẻ, viền phát sáng, gradient |
+| **Hiệu ứng Cuộn (Scroll Reveal)** | AOS (Animate On Scroll) 2.3.4 | Hiệu ứng cuộn mượt mà trên toàn trang (`fade-up`, `fade-left`, `fade-right`, `zoom-in`) |
+| **Styling & Hiệu ứng 3D** | CSS3 3D Transforms (`perspective`, `rotateX`) | Menu Header dropdown lật 3D sống động, hiệu ứng hover đa tầng |
 | **Typography & Font** | Lexend (Google Fonts) | Tương đồng 1:1 phong cách typography hiện đại của bản demo |
-| **Slider & Carousel** | Swiper 11 (CSS & JS) | Slide Hero fade mượt mà và Feedback khách hàng tự động chuyển đổi |
-| **Icons & Ký hiệu** | Bootstrap Icons 1.11 + SVG Vector gốc | Hệ thống icon sắc nét, không vỡ hạt trên màn hình Retina/4K |
+| **Slider & Carousel** | Swiper 11 (CSS & JS) | Slide Hero fade mượt mà với style transition và Feedback khách hàng tự động chuyển đổi |
+| **Icons & Ký hiệu** | Bootstrap Icons 1.11 (`bi-caret-down-fill`...) + SVG Vector gốc | Hệ thống icon sắc nét, không vỡ hạt trên màn hình Retina/4K |
 | **Đa ngôn ngữ (i18n)** | GTranslate Widget API | Mặc định Tiếng Việt, tự động dịch toàn trang sang English qua widget góc phải |
-| **Tương tác động (JS)** | Vanilla JavaScript (ES6+) | IntersectionObserver (đếm số, scroll reveal), popup video modal, smooth scroll |
+| **Tương tác động (JS)** | Vanilla JavaScript (ES6+) | AOS initialization, đếm số count-up, popup video modal, smooth scroll to top |
 
 ---
 

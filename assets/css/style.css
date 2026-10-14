@@ -314,50 +314,84 @@ section {
   transform: rotate(180deg);
 }
 
+/* Remove default Bootstrap dropdown caret since custom caret-down icon is used */
+.nav-main .dropdown-toggle::after {
+  display: none !important;
+}
+
 /* 3D-Style Dropdown Menu */
+.nav-main .dropdown-menu,
 .nav-main .dropdown-sub {
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
   min-width: 320px;
-  background: #fff;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  padding: 12px;
+  background: #ffffff !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 16px 45px rgba(6, 46, 57, 0.16) !important;
+  padding: 12px !important;
   list-style: none;
-  margin-top: 8px;
-  border: 1px solid #f1f3f5;
+  margin: 0 !important;
+  border: 1px solid #f1f3f5 !important;
   opacity: 0;
   visibility: hidden;
-  transform: perspective(600px) rotateX(-15deg) translateY(12px);
-  transform-origin: top center;
-  transition: all 0.32s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: perspective(600px) rotateX(-90deg) !important;
+  transform-origin: top center !important;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.35s ease, visibility 0.35s ease !important;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 1050;
+  display: block !important;
 }
-.nav-main > li:hover .dropdown-sub {
-  opacity: 1;
-  visibility: visible;
-  transform: perspective(600px) rotateX(0deg) translateY(0);
-  pointer-events: auto;
+
+/* 3D Dropdown trigger on hover or on Bootstrap show */
+.nav-main > li:hover .dropdown-menu,
+.nav-main > li:hover .dropdown-sub,
+.nav-main > li .dropdown-menu.show,
+.nav-main > li .dropdown-sub.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: perspective(600px) rotateX(0deg) !important;
+  pointer-events: auto !important;
 }
+
+/* Caret down rotation */
+.nav-main > li > a i.bi-caret-down-fill,
+.nav-main > li > a i.bi-caret-down {
+  font-size: 0.72rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav-main > li:hover > a i.bi-caret-down-fill,
+.nav-main > li:hover > a i.bi-caret-down,
+.nav-main > li > a.show i.bi-caret-down-fill,
+.nav-main > li > a.show i.bi-caret-down {
+  transform: rotate(180deg);
+}
+
+.nav-main .dropdown-menu li,
 .nav-main .dropdown-sub li {
   margin-bottom: 2px;
 }
+.nav-main .dropdown-menu li a,
 .nav-main .dropdown-sub li a {
-  display: block;
-  padding: 9px 14px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--navy);
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
+  display: flex !important;
+  align-items: center;
+  padding: 9px 14px !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  color: var(--navy) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: var(--transition) !important;
+  background: transparent !important;
+  white-space: normal !important;
   position: relative;
   overflow: hidden;
 }
+.nav-main .dropdown-menu li a:hover,
 .nav-main .dropdown-sub li a:hover {
-  background: var(--brand-soft);
-  color: var(--brand);
+  background: var(--brand-soft) !important;
+  color: var(--brand) !important;
   transform: translateX(5px);
 }
 
@@ -428,15 +462,24 @@ section {
 }
 
 /* ================= HERO SLIDER ================= */
+.hero,
 .hero-slider-section {
   margin-top: 110px;
   position: relative;
   overflow: hidden;
   background: var(--navy-dark);
 }
+.hero .swiper,
 .hero-swiper {
   width: 100%;
   height: 640px;
+  transition-duration: 1000ms;
+  transition-delay: 0ms;
+}
+.hero .swiper-slide,
+.hero-swiper .swiper-slide {
+  transition-duration: 1000ms;
+  transition-delay: 0ms;
 }
 .hero-slide-item {
   position: relative;
