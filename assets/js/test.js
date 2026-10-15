@@ -53,6 +53,23 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', refresh);
   refresh();
 })();
+(function fixNavDropdowns() {
+  const headerMain = document.querySelector('.header-main');
+  if (!headerMain) return;
+  document.querySelectorAll('.nav-main > li.has-dropdown').forEach((li) => {
+    const menu = li.querySelector('.dropdown-sub');
+    if (!menu) return;
+    const place = () => {
+      const liRect = li.getBoundingClientRect();
+      const mainRect = headerMain.getBoundingClientRect();
+      const maxLeft = window.innerWidth - menu.offsetWidth - 12;
+      menu.style.top = mainRect.bottom + 'px';
+      menu.style.left = Math.max(12, Math.min(liRect.left, maxLeft)) + 'px';
+    };
+    li.addEventListener('mouseenter', place);
+    li.addEventListener('focusin', place);
+  });
+})();
 
   // ==========================================
   // 2. SWIPER SLIDERS (Hero & Testimonials)
