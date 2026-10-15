@@ -30,28 +30,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 5. Nav prev/next scroll (menu ngang) + auto-hide khi không tràn
 (function initNavArrows() {
-    const nav = document.getElementById('navMain');
-    const prev = document.getElementById('navPrev');
-    const next = document.getElementById('navNext');
-    if (!nav || !prev || !next) return;
+  const nav = document.getElementById('navMain');
+  const prev = document.getElementById('navPrev');
+  const next = document.getElementById('navNext');
+  if (!nav || !prev || !next) return;
 
-    const step = 240; // px mỗi lần bấm
+  const step = 240;      // px mỗi lần bấm
+  const duration = 700;  // ms
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  let animId = null;
 
-    const refresh = () => {
-        const overflow = nav.scrollWidth > nav.clientWidth + 2;
-        // Ẩn cả 2 nút khi menu vừa khít (desktop rộng)
-        prev.classList.toggle('is-hidden', !overflow);
-        next.classList.toggle('is-hidden', !overflow);
-        if (!overflow) return;
-        prev.disabled = nav.scrollLeft <= 2;
-        next.disabled = nav.scrollLeft >= nav.scrollWidth - nav.clientWidth - 2;
+  const maxScroll = () => nav.scrollWidth - nav.clientWidth;
+
+  const scrollToX = (targetX) => {
+    if (animId) cancelAnimationFrame(animId);
+    const startX = nav.scrollLeft;
+    const distance = targetX - startX;
+    const startTime = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - startTime) / duration, 1);
+      nav.scrollLeft = startX + distance * easeOutCubic(p);
+      animId = p < 1 ? requestAnimationFrame(tick) : null;
     };
+    animId = requestAnimationFrame(tick);
+  };
 
-    prev.addEventListener('click', () => nav.scrollBy({ left: -step, behavior: 'smooth' }));
-    next.addEventListener('click', () => nav.scrollBy({ left:  step, behavior: 'smooth' }));
-    nav.addEventListener('scroll', refresh, { passive: true });
-    window.addEventListener('resize', refresh);
+  const refresh = () => {
+    const overflow = nav.scrollWidth > nav.clientWidth + 2;
+    prev.classList.toggle('is-hidden', !overflow);
+    next.classList.toggle('is-hidden', !overflow);
+    if (!overflow) return;
+    prev.disabled = nav.scrollLeft <= 2;
+    next.disabled = nav.scrollLeft >= maxScroll() - 2;
+  };
+
+  prev.addEventListener('click', () => scrollToX(Math.max(0, nav.scrollLeft - step)));
+  next.addEventListener('click', () => scrollToX(Math.min(maxScroll(), nav.scrollLeft + step)));
+  nav.addEventListener('scroll', refresh, { passive: true });
+  window.addEventListener('resize', refresh);
   refresh();
+})();
+// Đo chiều cao header để đặt nút đổi ngôn ngữ ngay dưới header
+(function syncHeaderHeight() {
+  const header = document.querySelector('.header-wrapper');
+  if (!header) return;
+  const setVar = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  setVar();
+  window.addEventListener('resize', setVar);
 })();
 (function fixNavDropdowns() {
   const headerMain = document.querySelector('.header-main');

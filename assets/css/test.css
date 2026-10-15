@@ -271,6 +271,9 @@ img {
   transition: transform 0.3s ease;
   margin-left: 2px;
 }
+.nav-main {
+  scroll-behavior: auto;
+}
 
 /* ===== DROPDOWN HOVER 3D (kiểu cũ, cho Dịch vụ & Thư viện) ===== */
 .has-dropdown {
@@ -369,6 +372,31 @@ img {
 }
 .search-dropdown-form .form-control {
   border-color: #e6e6e6;
+}
+.search-dropdown-form {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s,
+    transform 0.25s ease;
+}
+.search-dropdown-form::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 12px;
+}
+.search-box-toggle:hover .search-dropdown-form,
+.search-box-toggle:focus-within .search-dropdown-form,
+.search-box-toggle.active .search-dropdown-form {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
 .btn-search-go {
   background: var(--color-primary);
@@ -1344,4 +1372,25 @@ img {
   width: 18px;
   height: 12px;
   object-fit: cover;
+}
+.popup-ngonngu {
+  position: fixed;
+  top: var(--header-h, 170px);
+  right: 0;
+  z-index: 1035;
+}
+.popup-ngonngu .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 4px 12px rgba(253, 86, 36, 0.35);
+}
+.popup-ngonngu .icon i {
+  font-size: 20px;
+}
+.popup-ngonngu .language {
+  top: 100%;
+  right: 0;
+  width: 140px;
+  border-radius: 0 0 0 8px;
 }
