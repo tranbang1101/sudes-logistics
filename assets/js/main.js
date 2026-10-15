@@ -1,140 +1,290 @@
-/* ==========================================================================
-   SUDES LOGISTICS - MAIN JAVASCRIPT
-   Handles sliders, smooth back-to-top, count-up numbers, video popups,
-   search toggling, mobile offcanvas and GTranslate integration.
-   ========================================================================== */
+/**
+ * SUDES LOGISTICS - MAIN INTERACTION SCRIPT
+ * Handles UI components, animations, and dynamic behaviors.
+ */
 
-(function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+  
+  // ==========================================
+  // 1. INITIALIZATION HELPERS
+  // ==========================================
+  
+  const isMobile = window.innerWidth < 992;
+  
+  // Helper: Debounce function for performance
+  function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction() {
+      const context = this;
+      const args = arguments;
+      const later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      const callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
 
-  // 1. Initialize Hero Swiper with crossfade & auto-play
-  let heroSwiper = null;
-  const heroSwiperEl = document.querySelector('.hero .swiper') || document.getElementById('heroSwiper');
-  if (typeof Swiper !== 'undefined' && heroSwiperEl) {
-    heroSwiper = new Swiper(heroSwiperEl, {
-      loop: true,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      speed: 1200,
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false
-      },
-      pagination: {
-        el: '.hero-pagination, .swiper-pagination',
-        clickable: true
-      },
-      on: {
-        slideChangeTransitionEnd: function () {
-          if (typeof AOS !== 'undefined') {
-            AOS.refresh();
+  // 5. Nav prev/next scroll (menu ngang) + auto-hide khi không tràn
+(function initNavArrows() {
+  const nav = document.getElementById('navMain');
+  const prev = document.getElementById('navPrev');
+  const next = document.getElementById('navNext');
+  if (!nav || !prev || !next) return;
+
+  const step = 240;      // px mỗi lần bấm
+  const duration = 700;  // ms
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  let animId = null;
+
+  const maxScroll = () => nav.scrollWidth - nav.clientWidth;
+
+  const scrollToX = (targetX) => {
+    if (animId) cancelAnimationFrame(animId);
+    const startX = nav.scrollLeft;
+    const distance = targetX - startX;
+    const startTime = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - startTime) / duration, 1);
+      nav.scrollLeft = startX + distance * easeOutCubic(p);
+      animId = p < 1 ? requestAnimationFrame(tick) : null;
+    };
+    animId = requestAnimationFrame(tick);
+  };
+
+  const refresh = () => {
+    const overflow = nav.scrollWidth > nav.clientWidth + 2;
+    prev.classList.toggle('is-hidden', !overflow);
+    next.classList.toggle('is-hidden', !overflow);
+    if (!overflow) return;
+    prev.disabled = nav.scrollLeft <= 2;
+    next.disabled = nav.scrollLeft >= maxScroll() - 2;
+  };
+
+  prev.addEventListener('click', () => scrollToX(Math.max(0, nav.scrollLeft - step)));
+  next.addEventListener('click', () => scrollToX(Math.min(maxScroll(), nav.scrollLeft + step)));
+  nav.addEventListener('scroll', refresh, { passive: true });
+  window.addEventListener('resize', refresh);
+  refresh();
+})();
+// Đo chiều cao header để đặt nút đổi ngôn ngữ ngay dưới header
+(function syncHeaderHeight() {
+  const header = document.querySelector('.header-wrapper');
+  if (!header) return;
+  const setVar = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  setVar();
+  window.addEventListener('resize', setVar);
+})();
+(function fixNavDropdowns() {
+  const headerMain = document.querySelector('.header-main');
+  if (!headerMain) return;
+  document.querySelectorAll('.nav-main > li.has-dropdown').forEach((li) => {
+    const menu = li.querySelector('.dropdown-sub');
+    if (!menu) return;
+    const place = () => {
+      const liRect = li.getBoundingClientRect();
+      const mainRect = headerMain.getBoundingClientRect();
+      const maxLeft = window.innerWidth - menu.offsetWidth - 12;
+      menu.style.top = mainRect.bottom + 'px';
+      menu.style.left = Math.max(12, Math.min(liRect.left, maxLeft)) + 'px';
+    };
+    li.addEventListener('mouseenter', place);
+    li.addEventListener('focusin', place);
+  });
+})();
+
+  // ==========================================
+  // 2. SWIPER SLIDERS (Hero & Testimonials)
+  // ==========================================
+  
+  // Check if Swiper library is loaded globally
+  if (typeof Swiper !== 'undefined') {
+    
+    // Hero Slider
+    const heroSwiperEl = document.querySelector('.hero-swiper');
+    if (heroSwiperEl) {
+      new Swiper(heroSwiperEl, {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        speed: 1000,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.hero-pagination',
+          clickable: true,
+        },
+        // Pause autoplay on hover for better UX
+        on: {
+          mouseenter: function(swiper) {
+            swiper.autoplay.stop();
+          },
+          mouseleave: function(swiper) {
+            swiper.autoplay.start();
           }
         }
-      }
-    });
-  }
+      });
+    }
 
-  // 2. Initialize Feedback / Testimonials Swiper
-  let feedbackSwiper = null;
-  if (typeof Swiper !== 'undefined' && document.getElementById('feedbackSwiper')) {
-    feedbackSwiper = new Swiper('#feedbackSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      autoplay: {
-        delay: 6000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '#feedbackSwiper .swiper-pagination',
-        clickable: true
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24
+    // Testimonials Slider
+    const feedbackSwiperEl = document.getElementById('feedbackSwiper');
+    if (feedbackSwiperEl) {
+      new Swiper(feedbackSwiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
         },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 28
+        pagination: {
+          el: '#feedbackSwiper .swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
         }
-      }
+      });
+    }
+  }
+
+  // ==========================================
+  // 3. SCROLL ANIMATIONS (AOS & Header Sticky)
+  // ==========================================
+  
+  // Initialize AOS (Animate On Scroll)
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true, // Only animate once
+      offset: 50,
+      disable: window.innerWidth < 768 ? 'mobile' : false // Disable on mobile if needed for perf
     });
   }
 
-  // 3. Header Shadow on Scroll
+  // Header Shadow on Scroll
   const header = document.getElementById('siteHeader');
-  const onScrollHeader = () => {
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  const handleScroll = () => {
+    const scrolled = window.scrollY > 50;
+    
+    // Toggle Header Class
     if (header) {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    }
-  };
-
-  // 4. Back To Top (Single smooth scroll button)
-  const backBtn = document.getElementById('backToTop');
-  const onScrollBackBtn = () => {
-    if (backBtn) {
-      backBtn.classList.toggle('show', window.scrollY > 350);
-    }
-  };
-
-  window.addEventListener('scroll', () => {
-    onScrollHeader();
-    onScrollBackBtn();
-  }, { passive: true });
-  onScrollHeader();
-  onScrollBackBtn();
-
-  // Smooth scroll with custom easeOutCubic curve
-  const scrollToTopEaseOut = (duration = 800) => {
-    const startY = window.scrollY;
-    if (startY === 0) return;
-    const startTime = performance.now();
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-    const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      window.scrollTo(0, startY * (1 - easeOutCubic(progress)));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
-  if (backBtn) {
-    backBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      scrollToTopEaseOut(800);
-    });
-  }
-
-  // 5. Search Bar Toggle (Desktop)
-  const searchBoxToggle = document.getElementById('searchBoxToggle');
-  const btnSearchTrigger = document.getElementById('btnSearchTrigger');
-  if (btnSearchTrigger && searchBoxToggle) {
-    btnSearchTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      searchBoxToggle.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!searchBoxToggle.contains(e.target)) {
-        searchBoxToggle.classList.remove('active');
+      if (scrolled) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
+    }
+
+    // Toggle Back to Top Button
+    if (backToTopBtn) {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+  };
+
+  window.addEventListener('scroll', debounce(handleScroll, 10));
+  handleScroll(); // Run once on load
+
+  // Smooth Scroll to Top
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   }
 
-  // 6. Interactive FAQ Accordion (Click to toggle active class & slide)
+  // ==========================================
+  // 4. NUMBER COUNT-UP EFFECT
+  // ==========================================
+  
+  const counters = document.querySelectorAll('[data-count]');
+  
+  const runCounter = (el) => {
+    const target = +el.getAttribute('data-count');
+    const duration = 2000; // 2 seconds
+    const frameRate = 60;
+    const totalFrames = Math.round(duration / (1000 / frameRate));
+    const increment = target / totalFrames;
+    
+    let current = 0;
+    
+    const updateCount = () => {
+      current += increment;
+      if (current < target) {
+        el.innerText = Math.ceil(current).toLocaleString('vi-VN');
+        requestAnimationFrame(updateCount);
+      } else {
+        el.innerText = target.toLocaleString('vi-VN');
+      }
+    };
+    
+    updateCount();
+  };
+
+  // Intersection Observer to trigger counter when visible
+  if ('IntersectionObserver' in window) {
+    const observerOptions = {
+      threshold: 0.5 // Trigger when 50% of element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCounter(entry.target);
+          obs.unobserve(entry.target); // Stop observing after running once
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  } else {
+    // Fallback for old browsers
+    counters.forEach(counter => {
+      counter.innerText = counter.getAttribute('data-count').replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    });
+  }
+
+  // ==========================================
+  // 5. FAQ ACCORDION
+  // ==========================================
+  
   const faqItems = document.querySelectorAll('.faq-list li');
-  faqItems.forEach((item) => {
+  
+  faqItems.forEach(item => {
     const heading = item.querySelector('h3');
     if (heading) {
       heading.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        // Close siblings for clean accordion behavior
-        faqItems.forEach((sibling) => sibling.classList.remove('active'));
+        
+        // Close all other items (Optional: remove this block if you want multiple open)
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+        });
+
+        // Toggle current
         if (!isActive) {
           item.classList.add('active');
         }
@@ -142,7 +292,10 @@
     }
   });
 
-  // 7. Video Modal Popup
+  // ==========================================
+  // 6. VIDEO POPUP MODAL
+  // ==========================================
+  
   const openVideoBtn = document.getElementById('openVideoBtn');
   const popupVideo = document.getElementById('popupVideo');
   const closeVideoBtn = document.getElementById('closeVideoBtn');
@@ -151,94 +304,104 @@
   if (openVideoBtn && popupVideo && videoContainer) {
     openVideoBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const videoId = openVideoBtn.getAttribute('data-video') || '9Jhuvm0-9F4';
-      videoContainer.innerHTML = `<iframe class="w-100 h-100" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      const videoId = openVideoBtn.getAttribute('data-video');
+      
+      // Inject YouTube Iframe
+      videoContainer.innerHTML = `
+        <iframe 
+          width="100%" 
+          height="100%" 
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      `;
+      
       popupVideo.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
     });
 
-    const closeVideo = () => {
+    const closePopup = () => {
       popupVideo.classList.remove('open');
-      setTimeout(() => {
-        videoContainer.innerHTML = '';
-      }, 300);
+      videoContainer.innerHTML = ''; // Remove iframe to stop audio
+      document.body.style.overflow = ''; // Restore scrolling
     };
 
-    if (closeVideoBtn) closeVideoBtn.addEventListener('click', closeVideo);
+    if (closeVideoBtn) {
+      closeVideoBtn.addEventListener('click', closePopup);
+    }
+
+    // Close on outside click
     popupVideo.addEventListener('click', (e) => {
-      if (e.target === popupVideo) closeVideo();
+      if (e.target === popupVideo) {
+        closePopup();
+      }
     });
+
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && popupVideo.classList.contains('open')) closeVideo();
+      if (e.key === 'Escape' && popupVideo.classList.contains('open')) {
+        closePopup();
+      }
     });
   }
 
-  // 8. Initialize AOS Animation Library
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 50
+  // ==========================================
+  // 7. SEARCH BOX TOGGLE
+  // ==========================================
+  
+  const searchToggle = document.getElementById('btnSearchTrigger');
+  const searchBox = document.getElementById('searchBoxToggle');
+
+  if (searchToggle && searchBox) {
+    searchToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      searchBox.classList.toggle('active');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchBox.contains(e.target)) {
+        searchBox.classList.remove('active');
+      }
     });
   }
 
-  // Fallback Scroll-Reveal Animations (IntersectionObserver for data-anim if present)
-  const animEls = document.querySelectorAll('[data-anim]');
-  animEls.forEach((el) => {
-    const delay = el.getAttribute('data-delay');
-    if (delay) el.style.setProperty('--delay', delay + 'ms');
+  // ==========================================
+  // 8. MOBILE MENU HANDLING (Bootstrap Offcanvas)
+  // ==========================================
+  // Note: Since we are using Bootstrap 5's native offcanvas component via data-bs-target,
+  // most functionality is handled by bootstrap.bundle.min.js.
+  // We just need to ensure any custom scripts don't conflict.
+  
+  // Auto-close offcanvas when clicking a link inside it (UX improvement)
+  const offcanvasLinks = document.querySelectorAll('#mobileMenuOffcanvas a[href^="#"]');
+  offcanvasLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const offcanvasInstance = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenuOffcanvas'));
+      if(offcanvasInstance) {
+        offcanvasInstance.hide();
+      }
+    });
   });
 
-  if ('IntersectionObserver' in window) {
-    const ioAnim = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          ioAnim.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    animEls.forEach((el) => ioAnim.observe(el));
-  } else {
-    animEls.forEach((el) => el.classList.add('in-view'));
-  }
-
-  // 9. Count-Up Numbers (for Why us & About stats)
-  const counters = document.querySelectorAll('[data-count]');
-  const runCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const duration = 1800;
-    const start = performance.now();
-    const format = (n) => n.toLocaleString('vi-VN');
-
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = format(Math.floor(target * eased));
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = format(target);
-      }
-    };
-    requestAnimationFrame(step);
-  };
-
-  if ('IntersectionObserver' in window) {
-    const countIO = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          runCounter(entry.target);
-          countIO.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach((c) => countIO.observe(c));
-  } else {
-    counters.forEach(runCounter);
-  }
-
-  // 10. Language Switcher Trigger for Mobile click support
+});
+/* ==========================================================
+   ĐỔI NGÔN NGỮ (GTranslate) - nút globe dưới header
+   ========================================================== */
+(function initLanguageSwitcher() {
+  const popup = document.getElementById('popupNgonngu');
+  const toggle = document.getElementById('toggleLangDropdown');
+  if (!popup || !toggle) return;
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.toggle('active');
+  });
+  document.addEventListener('click', (e) => {
+    if (!popup.contains(e.target)) popup.classList.remove('active');
+  });
+  // Language Switcher Trigger for Mobile click support
   const popupNgonngu = document.getElementById('popupNgonngu');
   const toggleLangBtn = document.getElementById('toggleLangDropdown');
   if (toggleLangBtn && popupNgonngu) {
@@ -252,24 +415,23 @@
       }
     });
   }
-
-  // 11. GTranslate helper integration
-  window.translatePage = function (lang) {
-    // If GTranslate float widget creates select or links, trigger them
-    const gtSelect = document.querySelector('.goog-te-combo, select.gt_selector');
-    if (gtSelect) {
-      gtSelect.value = lang;
-      gtSelect.dispatchEvent(new Event('change'));
-    } else {
-      // Trigger via gtranslate function if available
-      if (typeof doGTranslate === 'function') {
-        doGTranslate('vi|' + lang);
-      } else {
-        // Fallback cookie translation
-        document.cookie = `googtrans=/vi/${lang}; path=/`;
-        location.reload();
-      }
-    }
-  };
-
 })();
+
+// Gọi doGTranslate('nguồn|đích') của widget GTranslate, ví dụ 'vi|en'
+window.translatePage = function (lang) {
+  const pair = 'vi|' + lang;
+  const run = () => {
+    if (typeof window.doGTranslate === 'function') {
+      window.doGTranslate(pair);
+      return true;
+    }
+    return false;
+  };
+  if (!run()) {
+    let tries = 0;
+    const timer = setInterval(() => {
+      tries++;
+      if (run() || tries >= 10) clearInterval(timer);
+    }, 300);
+  }
+};

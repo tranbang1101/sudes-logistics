@@ -15,7 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="assets/css/test.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body id="top">
 
@@ -945,14 +945,22 @@
 </button>
 
 <!-- Hidden GTranslate Widget Container -->
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"vi","native_language_names":true,"languages":["vi","en"],"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+<div class="gtranslate_wrapper" style="display:none;"></div>
+<script>
+window.gtranslateSettings = {
+  default_language: "vi",
+  languages: ["vi", "en"],
+  wrapper_selector: ".gtranslate_wrapper",
+  flag_size: 24,
+  detect_browser_language: false
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
 <!-- Scripts: Bootstrap 5.3 & Swiper 11 & AOS & Main JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="assets/js/test.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
