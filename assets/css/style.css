@@ -3,6 +3,50 @@
    Accurate 1:1 reproduction of Sudes Logistics Demo (Sapo Theme)
    ========================================================================== */
 
+/* @font-face declarations for SVN-Gilroy (Exact font from demo) */
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_light.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_semibold.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_xbold.otf") format("opentype");
+}
+@font-face {
+  font-family: "SVN-Gilroy";
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/svn-gilroy_black.otf") format("opentype");
+}
+
 :root {
   --brand: #fd5624;
   --brand-hover: #e0431a;
@@ -14,9 +58,9 @@
   --text-main: #1d2b33;
   --text-muted: #667085;
   --border-line: #e9ecef;
-  --bg-soft: #fcf9f7;
+  --bg-soft: #FFF6F3;
   --bg-card: #ffffff;
-  --font-main: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-main: "SVN-Gilroy", "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --shadow-sm: 0 4px 16px rgba(6, 46, 57, 0.06);
   --shadow-md: 0 10px 30px rgba(6, 46, 57, 0.1);
   --shadow-lg: 0 16px 45px rgba(6, 46, 57, 0.14);
@@ -40,9 +84,11 @@ body {
   font-family: var(--font-main);
   color: var(--text-main);
   background-color: #fff;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.65;
   overflow-x: hidden;
+  word-break: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -75,25 +121,44 @@ section {
   padding: 55px 0;
 }
 
+.sub_title,
 .sub-title-tag {
+  position: relative;
+  color: #fd5624;
+  text-align: center;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: var(--brand-tag);
-  color: var(--brand);
-  font-size: 0.88rem;
+  padding: 5px 20px;
+  min-height: 32px;
+  margin-bottom: 14px;
   font-weight: 600;
-  padding: 6px 18px;
-  border-radius: 4px;
-  clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 15px;
+  z-index: 1;
 }
+.sub_title:before,
+.sub-title-tag:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  transform: skewX(-15deg);
+  background: linear-gradient(to right, #ffb8b6, #ffddca);
+  z-index: -1;
+}
+.sub_title img,
 .sub-title-tag img {
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+.sub_title span,
+.sub-title-tag span {
+  position: relative;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
 }
 
 .title_font {
