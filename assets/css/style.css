@@ -57,7 +57,9 @@
   --color-text-muted: #6c757d;
   --color-white: #ffffff;
   --color-black: #000000;
-  --font-main: "SVN-Gilroy", "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-main:
+    "SVN-Gilroy", "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
   --shadow-sm: 0 4px 16px rgba(6, 46, 57, 0.06);
   --shadow-md: 0 10px 30px rgba(6, 46, 57, 0.1);
   --shadow-lg: 0 16px 45px rgba(6, 46, 57, 0.14);
@@ -170,7 +172,7 @@ img {
   fill: currentColor;
 }
 
-/* --- 2. HEADER STYLES (khớp demo) --- */
+/* --- 2. HEADER STYLES --- */
 .header-wrapper {
   position: sticky;
   top: 0;
@@ -185,7 +187,7 @@ img {
 
 .header-inner {
   display: flex;
-  align-items: stretch; /* logo cam cao bằng cả header */
+  align-items: stretch;
   width: 100%;
 }
 
@@ -201,9 +203,9 @@ img {
   display: inline-flex;
   align-items: center;
 }
-/* Logo trắng trên nền cam (file logo.png của bạn đang là bản tối) */
+/* Logo trắng trên nền cam */
 .logo-block .logo img {
-  max-height: 52px;
+  max-height: 50px;
   width: auto;
   filter: brightness(0) invert(1);
 }
@@ -221,16 +223,16 @@ img {
   background: var(--color-secondary);
   color: var(--color-white);
   padding: 9px 0;
-  font-size: 14px;
+  font-size: 30px;
 }
 .social_header {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 .social_header a {
   color: var(--color-white);
-  font-size: 15px;
+  font-size: 30px;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -242,7 +244,7 @@ img {
 }
 .social_header .zalo-link span {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 24px;
   letter-spacing: 0.3px;
 }
 
@@ -260,11 +262,11 @@ img {
 }
 .ht-icon {
   color: var(--color-primary);
-  font-size: 15px;
+  font-size: 24px;
 }
 .contact_header .sub-text {
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 20px;
 }
 .contact_header a.sub-text:hover {
   color: var(--color-primary);
@@ -296,17 +298,16 @@ img {
 .nav-main {
   display: flex;
   align-items: center;
-  gap: 4px;
   flex-wrap: nowrap;
 }
 .nav-main > li > a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   color: var(--color-secondary);
+  gap: 4px;
   font-weight: 600;
-  font-size: 15.5px;
-  padding: 24px 12px;
+  font-size: 15px;
+  padding: 24px 10px;
   position: relative;
   white-space: nowrap;
 }
@@ -680,24 +681,6 @@ img {
 .item_quy_trinh p {
   font-size: 14px;
   color: var(--color-text-muted);
-}
-
-/* Arrow connector between steps (Desktop only) */
-@media (min-width: 992px) {
-  .item_quy_trinh:not(:last-child)::after {
-    content: "\F285"; /* Bootstrap Icon Chevron Right */
-    font-family: "bootstrap-icons";
-    position: absolute;
-    right: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: var(--color-primary);
-    z-index: 2;
-  }
-  .col-lg-3 {
-    position: relative;
-  }
 }
 
 /* --- 6. SERVICES SECTION --- */
@@ -1270,6 +1253,35 @@ img {
   .btn-quote i {
     font-size: 20px;
   }
+  .item_quy_trinh:not(:last-child)::after {
+    content: "\F285"; /* Bootstrap Icon Chevron Right */
+    font-family: "bootstrap-icons";
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: var(--color-primary);
+    z-index: 2;
+  }
+  .col-lg-3 {
+    position: relative;
+  }
+  .header-top {
+    padding: 10px 0;
+  }
+  .logo-block {
+    padding: 0 24px;
+  }
+  .logo-block .logo img {
+    max-height: 62px;
+  }
+  .header-main .row {
+    min-height: 96px;
+  }
+  .nav-main > li > a {
+    padding: 26px 10px;
+  }
 }
 
 /* Cột và menu cuộn ngang */
@@ -1449,9 +1461,11 @@ img {
 .gtraslate_wrapper {
   display: none !important;
 }
-.goo-te-banner-frame, .skiptranslate > iframe {
+.goo-te-banner-frame,
+.skiptranslate > iframe {
   display: none !important;
 }
-html, body {
+html,
+body {
   top: 0 !important;
 }
