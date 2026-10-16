@@ -218,9 +218,9 @@ img {
   flex-direction: column;
 }
 
-/* Top bar dark */
+/* Header Top */
 .header-top {
-  background: var(--color-secondary);
+  background: url("../img/bg_topbar.jpg");
   color: var(--color-white);
   padding: 9px 0;
   font-size: 30px;
@@ -745,8 +745,9 @@ img {
 }
 .shipping-success-box-inline {
   width: 0px;
-  height: 50px;
+  height: 40px;
   opacity: 0.3;
+  margin: 0 20px;
   border-left: 2px solid var(--color-secondary);
 }
 .shipping-success-box .content-sus {
@@ -754,7 +755,7 @@ img {
   color: var(--color-secondary);
 }
 
-/* --- 5. WORKFLOW SECTION --- */
+/* --- QUY TRÌNH LÀM VIỆC --- */
 .section_quytrinh {
   background-image: url("../img/bg_workflow.jpg"); /* Placeholder path */
   background-size: cover;
