@@ -122,12 +122,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
       const heroSwiper = new Swiper(heroSwiperEl, {
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 2600,
         loop: true,
         autoplay: {
-          delay: 2400,
+          delay: 2600,
           disableOnInteraction: false
         },
         watchOverflow: true,

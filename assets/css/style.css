@@ -577,7 +577,7 @@ img {
   border-radius: 5px;
   color: #fff;
   z-index: 2;
-  width: 60%;
+  width: 70%;
   transition: 2s all;
   opacity: 0;
 }
@@ -602,7 +602,7 @@ img {
   top: 150px;
   opacity: 0;
   transition: 1.4s all;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.15;
   margin-bottom: 0.5rem;
   text-shadow: none;
