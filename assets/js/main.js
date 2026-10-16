@@ -112,28 +112,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       heroSlides.forEach((slide, index) => {
         slide.classList.add('swiper-slide');
-
         // Ảnh hero gốc của demo Sapo/Bizweb
-        const desktopImage =
-          `https://bizweb.dktcdn.net/100/578/208/themes/1021406/assets/slider_${index + 1}.jpg`;
-
-        const mobileImage =
-          `https://bizweb.dktcdn.net/thumb/grande/100/578/208/themes/1021406/assets/slider_${index + 1}_mb.jpg`;
+        const desktopImage = `https://bizweb.dktcdn.net/100/578/208/themes/1021406/assets/slider_${index + 1}.jpg`;
+        const mobileImage = `https://bizweb.dktcdn.net/thumb/grande/100/578/208/themes/1021406/assets/slider_${index + 1}_mb.jpg`;
 
         const picture = slide.querySelector('picture');
         const source = picture?.querySelector('source');
         const image = slide.querySelector('.hero-bg img');
-
         if (source) {
           source.srcset = desktopImage;
         }
-
         if (image) {
           image.src = mobileImage;
           image.srcset = desktopImage;
         }
       });
-
       const heroSwiper = new Swiper(heroSwiperEl, {
         slidesPerView: 1,
         spaceBetween: 0,
@@ -146,11 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         watchOverflow: true,
       });
-
       heroSwiperEl.addEventListener('mouseenter', () => {
         heroSwiper.autoplay.stop();
       });
-
       heroSwiperEl.addEventListener('mouseleave', () => {
         heroSwiper.autoplay.start();
       });
