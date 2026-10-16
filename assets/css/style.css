@@ -842,7 +842,7 @@ img {
   content: "";
   position: absolute;
   top: 70px;
-  left: 68%;   
+  left: 68%;
   right: -20%;
   width: 80%;
   height: 40px;
@@ -1012,6 +1012,20 @@ img {
   color: var(--color-white);
   position: relative;
   overflow: hidden;
+  position: relative;
+  padding: 60px 0;
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: #ebebeb;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 992px) {
+  .section_why_choose {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
 }
 /* Optional BG Image */
 .section_why_choose::before {
@@ -1021,52 +1035,198 @@ img {
   opacity: 0.05;
 }
 
+.sub_tai_sao,
+.title_tai_sao,
+.content_tai_sao {
+  text-align: center;
+}
+
+.section_why_choose .sub_tai_sao {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+}
+.section_why_choose .title_tai_sao {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 57px;
+  color: #fff;
+}
+.section_why_choose .content_tai_sao {
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+}
+@media (min-width: 992px) {
+  .section_why_choose .content_tai_sao {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1025px) {
+  .section_why_choose .sub_tai_sao {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .section_why_choose .title_tai_sao {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  .section_why_choose .content_tai_sao {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .section_why_choose .sub_tai_sao {
+    font-size: 20px;
+  }
+  .section_why_choose .title_tai_sao {
+    font-size: 26px;
+  }
+  .section_why_choose .content_tai_sao {
+    font-size: 14px;
+  }
+}
+
+/* List 5 card thống kê */
 .list_tai_sao_chon {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
+  gap: 40px;
   margin-top: 40px;
 }
 
-.sub_tai_sao, .title_tai_sao, .content_tai_sao {
-  text-align: center;
-  margin: 30px 0 30px;
+.section_why_choose .list_tai_sao_chon {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 75px;
+  margin: 30px 0;
+  padding: 0;
+  overflow: auto;
+  justify-content: start;
+}
+@media (max-width: 1199px) {
+  .section_why_choose .list_tai_sao_chon {
+    gap: 40px;
+  }
+}
+@media (max-width: 992px) {
+  /* Tablet: trượt ngang, mỗi thẻ rộng 26% */
+  .section_why_choose .list_tai_sao_chon {
+    grid-template-columns: repeat(5, 26%);
+  }
+}
+@media (max-width: 767px) {
+  .section_why_choose .list_tai_sao_chon {
+    grid-template-columns: repeat(5, 41%);
+    gap: 30px;
+  }
+}
+@media (max-width: 325px) {
+  .section_why_choose .list_tai_sao_chon {
+    grid-template-columns: repeat(5, 55%);
+  }
+}
+/* Thẻ trắng bo góc, icon cam nhô lên trên */
+.section_why_choose .item_tai_sao_chon {
+  position: relative;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+/* Gạch trắng nối từ thẻ trước sang thẻ này */
+.section_why_choose .item_tai_sao_chon::before {
+  content: "";
+  position: absolute;
+  right: calc(100% - 15px);
+  bottom: 85px;
+  z-index: 0;
+  width: 110px;
+  height: 4px;
+  background-color: #fff;
+}
+@media (max-width: 1199px) {
+  .section_why_choose .item_tai_sao_chon::before {
+    bottom: 75px;
+    width: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .section_why_choose .item_tai_sao_chon {
+    padding: 5px;
+  }
+  .section_why_choose .item_tai_sao_chon::before {
+    bottom: 62px;
+    width: 60px;
+  }
 }
 
-.sub_tai_sao {
-  font-size: 30px;
-  padding-top: 20px
+.section_why_choose .item_tai_sao_chon .icon_item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 111px;
+  height: 86px;
+  margin: -45px auto 15px;
+  border-radius: 10px;
+  background-color: #fd5624;
 }
-.title_tai_sao {
-  font-size: 60px;
+.section_why_choose .item_tai_sao_chon .icon_item img {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0 auto;
+  filter: none;
 }
-.content_tai_sao {
-  font-size: 20px;
+@media (max-width: 1025px) {
+  .section_why_choose .item_tai_sao_chon .icon_item {
+    width: 91px;
+    height: 66px;
+  }
+  .section_why_choose .item_tai_sao_chon .icon_item img {
+    max-width: 40px;
+    max-height: 40px;
+  }
 }
 
-.item_tai_sao_chon {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  padding: 30px 20px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.section_why_choose .item_tai_sao_chon p {
+  margin-bottom: 0;
 }
-.item_tai_sao_chon .icon_item img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-  filter: brightness(0) invert(1);
+.section_why_choose .item_tai_sao_chon .title_item {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #062e39;
 }
-.item_tai_sao_chon .title_item {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--color-primary);
+.section_why_choose .item_tai_sao_chon .content_item {
   margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #062e39;
+  opacity: 1;
 }
-.item_tai_sao_chon .content_item {
-  font-size: 20px;
-  opacity: 0.8;
+@media (max-width: 1025px) {
+  .section_why_choose .item_tai_sao_chon .title_item {
+    font-size: 20px;
+    margin-bottom: 7px;
+  }
+  .section_why_choose .item_tai_sao_chon .content_item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .section_why_choose .item_tai_sao_chon .title_item {
+    font-size: 18px;
+  }
+  .section_why_choose .item_tai_sao_chon .content_item {
+    font-size: 12px;
+  }
 }
 
 /* --- 8. NEWS SECTION --- */
