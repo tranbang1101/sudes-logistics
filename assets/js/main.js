@@ -100,16 +100,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // 2. SWIPER SLIDERS (Hero & Testimonials)
   // ==========================================
   if (typeof Swiper !== 'undefined') {
-    
     // Hero Slider
     const heroSwiperEl = document.querySelector('.hero-swiper');
-
     if (heroSwiperEl) {
-
-      // Fix: markup hiện tại dùng .hero-slide nhưng Swiper
-      // cần .swiper-slide để nhận diện slide.
       const heroSlides = heroSwiperEl.querySelectorAll('.hero-slide');
-
       heroSlides.forEach((slide, index) => {
         slide.classList.add('swiper-slide');
         // Ảnh hero gốc của demo Sapo/Bizweb
@@ -132,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 0,
         speed: 2600,
         loop: true,
-
         autoplay: {
           delay: 2600,
           disableOnInteraction: false
