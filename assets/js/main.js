@@ -103,26 +103,68 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Hero Slider
     const heroSwiperEl = document.querySelector('.hero-swiper');
-    if (heroSwiperEl) {
-      const heroSwiper = new Swiper(heroSwiperEl, {
-        effect: 'creative',
-        creativeEffect: {
-          prev: { translate: [0, '100%', 0] }, // slide rời khung đi xuống
-          next: { translate: [0, '100%', 0] }, // slide mới đi lên từ dưới
-        },
-        loop: false,
-        rewind: true,   
-        speed: 2600,    
-        autoplay: {
-          delay: 4500,  
-          disableOnInteraction: false,
-        },
-      });
 
-      // Dừng tự chạy khi rê chuột vào hero, chạy lại khi rời ra
-      heroSwiperEl.addEventListener('mouseenter', () => heroSwiper.autoplay.stop());
-      heroSwiperEl.addEventListener('mouseleave', () => heroSwiper.autoplay.start());
+if (heroSwiperEl) {
+
+  // Fix: markup hiện tại dùng .hero-slide nhưng Swiper
+  // cần .swiper-slide để nhận diện slide.
+  const heroSlides = heroSwiperEl.querySelectorAll('.hero-slide');
+
+  heroSlides.forEach((slide, index) => {
+    slide.classList.add('swiper-slide');
+
+    // Ảnh hero gốc của demo Sapo/Bizweb
+    const desktopImage =
+      `https://bizweb.dktcdn.net/100/578/208/themes/1021406/assets/slider_${index + 1}.jpg`;
+
+    const mobileImage =
+      `https://bizweb.dktcdn.net/thumb/grande/100/578/208/themes/1021406/assets/slider_${index + 1}_mb.jpg`;
+
+    const picture = slide.querySelector('picture');
+    const source = picture?.querySelector('source');
+    const image = slide.querySelector('.hero-bg img');
+
+    if (source) {
+      source.srcset = desktopImage;
     }
+
+    if (image) {
+      image.src = mobileImage;
+      image.srcset = desktopImage;
+    }
+  });
+
+  const heroSwiper = new Swiper(heroSwiperEl, {
+    effect: 'creative',
+
+    creativeEffect: {
+      prev: {
+        translate: [0, '100%', 0]
+      },
+      next: {
+        translate: [0, '100%', 0]
+      }
+    },
+
+    loop: false,
+    rewind: true,
+
+    speed: 2600,
+
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false
+    }
+  });
+
+  heroSwiperEl.addEventListener('mouseenter', () => {
+    heroSwiper.autoplay.stop();
+  });
+
+  heroSwiperEl.addEventListener('mouseleave', () => {
+    heroSwiper.autoplay.start();
+  });
+}
 
     // Testimonials Slider
     const feedbackSwiperEl = document.getElementById('feedbackSwiper');
