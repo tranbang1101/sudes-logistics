@@ -931,7 +931,9 @@ img {
   overflow: hidden;
   group: hover;
   cursor: pointer;
+  text-align: center;
   height: 100%;
+  cursor: pointer;
 }
 
 .item_dich_vu .img_dv {
@@ -959,26 +961,42 @@ img {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: var(--color-white);
   text-align: center;
+  z-index: 2;
+  width: 100%;
+  padding: 0 10px;
+  text-align: center;
+  color: #fff;
 }
 .icon_dv img {
-  width: 120px;
-  height: 100px;
-  margin-bottom: 20px;
-  padding: 0 10px 40px;
-  filter: brightness(0) invert(1); 
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 160px;
+  padding: 0 10px 0;
 }
 .info_dich_vu-inline {
-  width: 2px;
-  height: 20px;
-  opacity: 0.7;
-  border-left: 2px solid #d33202;
-  margin: 8px auto;
   display: block;
+  width: 60px;
+  height: 5px;
+  margin: 30px auto 20px;
+  border-radius: 5px;
+  background-color: #fd5624;
 }
 .title_item {
   font-size: 22px;
   font-weight: 600;
   padding-bottom: 80px;
+}
+.item_dich_vu .title_item {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.item_dich_vu:hover .title_item {
+  color: #fd5624;
 }
 
 /* Overlay link */
