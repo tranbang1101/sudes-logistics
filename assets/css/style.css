@@ -540,7 +540,6 @@ img {
   object-fit: initial;
 }
 
-/* lớp phủ nhẹ giống demo */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -582,7 +581,6 @@ img {
   opacity: 0;
 }
 
-/* Khi slide active */
 .hero-swiper .swiper-slide.swiper-slide-active .hero-text {
   opacity: 1;
   top: 50%;
@@ -757,7 +755,6 @@ img {
 
 /* --- QUY TRÌNH LÀM VIỆC --- */
 .section_quytrinh {
-  background-image: url("../img/bg_workflow.jpg"); /* Placeholder path */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -776,9 +773,7 @@ img {
 .item_quy_trinh {
   background: var(--color-white);
   padding: 30px 20px;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   height: 100%;
 }
@@ -786,13 +781,13 @@ img {
   transform: translateY(-5px);
 }
 .item_quy_trinh .icon_item img {
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 15px;
 }
 .item_quy_trinh h3 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--color-secondary);
   margin-bottom: 10px;
 }
