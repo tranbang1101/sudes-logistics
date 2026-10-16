@@ -710,7 +710,7 @@ img {
 }
 
 .box_thong_so {
-  display: flex;
+  display: column;
   gap: 20px;
   margin: 30px 0;
   flex-wrap: wrap;
@@ -720,6 +720,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 20px 0;
 }
 .item_thong_so img {
   width: 40px;
@@ -732,24 +733,24 @@ img {
 }
 
 .shipping-success-box {
-  background: var(--color-white);
-  padding: 20px;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
 }
 .shipping-success-box .number {
-  font-size: 42px;
-  font-weight: 800;
-  color: var(--color-primary);
+  font-size: 50px;
+  font-weight: 400;
   line-height: 1;
 }
+.shipping-success-box-inline {
+  width: 0px;
+  height: 50px;
+  opacity: 0.3;
+  border-left: 2px solid var(--color-secondary);
+}
 .shipping-success-box .content-sus {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
   color: var(--color-secondary);
 }
 
