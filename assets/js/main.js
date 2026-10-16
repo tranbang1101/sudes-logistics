@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const heroSlides = heroSwiperEl.querySelectorAll('.hero-slide');
       heroSlides.forEach((slide, index) => {
         slide.classList.add('swiper-slide');
-        // Ảnh hero gốc của demo Sapo/Bizweb
+        // Ảnh hero background Sapo/Bizweb
         const desktopImage = `https://bizweb.dktcdn.net/100/578/208/themes/1021406/assets/slider_${index + 1}.jpg`;
         const mobileImage = `https://bizweb.dktcdn.net/thumb/grande/100/578/208/themes/1021406/assets/slider_${index + 1}_mb.jpg`;
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         speed: 2600,
         loop: true,
         autoplay: {
-          delay: 2600,
+          delay: 2400,
           disableOnInteraction: false
         },
         watchOverflow: true,
