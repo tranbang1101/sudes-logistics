@@ -597,8 +597,8 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-slide {
-    transition: none;
+  .hero-slide .swiper-slide {
+    transition: none !important;
   }
 }
 

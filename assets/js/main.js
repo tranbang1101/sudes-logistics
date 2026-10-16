@@ -117,10 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
           delay: 4500,  
           disableOnInteraction: false,
         },
-        pagination: {
-          el: '.hero-pagination',
-          clickable: true,
-        },
       });
 
       // Dừng tự chạy khi rê chuột vào hero, chạy lại khi rời ra
