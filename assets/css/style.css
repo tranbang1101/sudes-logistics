@@ -770,6 +770,13 @@ img {
   z-index: 1;
 }
 
+.title_font {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  margin-bottom: 40px;
+}
+
 .item_quy_trinh {
   background: var(--color-white);
   padding: 30px 20px;
@@ -793,6 +800,7 @@ img {
 }
 .item_quy_trinh p {
   font-size: 14px;
+  font-weight: 400;
   color: var(--color-text-muted);
 }
 
