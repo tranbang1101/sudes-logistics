@@ -1018,7 +1018,6 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../img/bg_stats_pattern.png") repeat; /* Pattern overlay */
   opacity: 0.05;
 }
 
@@ -1027,6 +1026,22 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   margin-top: 40px;
+}
+
+.sub_tai_sao, .title_tai_sao, .content_tai_sao {
+  text-align: center;
+  margin: 30px 0 30px;
+}
+
+.sub_tai_sao {
+  font-size: 30px;
+  padding-top: 20px
+}
+.title_tai_sao {
+  font-size: 60px;
+}
+.content_tai_sao {
+  font-size: 20px;
 }
 
 .item_tai_sao_chon {
