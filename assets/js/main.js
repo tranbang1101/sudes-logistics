@@ -99,36 +99,33 @@ document.addEventListener('DOMContentLoaded', function () {
   // ==========================================
   // 2. SWIPER SLIDERS (Hero & Testimonials)
   // ==========================================
-  
-  // Check if Swiper library is loaded globally
   if (typeof Swiper !== 'undefined') {
     
     // Hero Slider
     const heroSwiperEl = document.querySelector('.hero-swiper');
     if (heroSwiperEl) {
-      new Swiper(heroSwiperEl, {
-        loop: true,
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
-        speed: 1000,
+      const heroSwiper = new Swiper(heroSwiperEl, {
+        effect: 'creative',
+        creativeEffect: {
+          prev: { translate: [0, '100%', 0] }, // slide rời khung đi xuống
+          next: { translate: [0, '100%', 0] }, // slide mới đi lên từ dưới
+        },
+        loop: false,
+        rewind: true,   
+        speed: 2600,    
         autoplay: {
-          delay: 5000,
+          delay: 4500,  
           disableOnInteraction: false,
         },
         pagination: {
           el: '.hero-pagination',
           clickable: true,
         },
-        // Pause autoplay on hover for better UX
-        on: {
-          mouseenter: function(swiper) {
-            swiper.autoplay.stop();
-          },
-          mouseleave: function(swiper) {
-            swiper.autoplay.start();
-          }
-        }
       });
+
+      // Dừng tự chạy khi rê chuột vào hero, chạy lại khi rời ra
+      heroSwiperEl.addEventListener('mouseenter', () => heroSwiper.autoplay.stop());
+      heroSwiperEl.addEventListener('mouseleave', () => heroSwiper.autoplay.start());
     }
 
     // Testimonials Slider
@@ -435,63 +432,3 @@ window.translatePage = function (lang) {
     }, 300);
   }
 };
-/* ==========================================================
-   HERO SLIDER - chữ và nền trượt dọc, lặp vô hạn (không dùng Swiper)
-   Slide hiện tại đi xuống, slide kế tiếp đi lên.
-   ========================================================== */
-(function initHeroSlider() {
-  const hero = document.getElementById('hero');
-  if (!hero) return;
-
-  const slides = Array.from(hero.querySelectorAll('[data-slide]'));
-  const dots = Array.from(hero.querySelectorAll('[data-go]'));
-  if (slides.length < 2) return;
-
-  const DELAY = 5000; // thời gian mỗi slide đứng yên (ms)
-  let current = 0;
-  let timer = null;
-
-  function show(next) {
-    if (next === current) return;
-    const prev = current;
-
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('is-active', i === next); // slide mới đi lên
-      slide.classList.toggle('is-out', i === prev);    // slide cũ đi xuống
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('is-active', i === next);
-      dot.setAttribute('aria-current', i === next ? 'true' : 'false');
-    });
-
-    current = next;
-  }
-
-  function nextSlide() {
-    show((current + 1) % slides.length);
-  }
-
-  function start() {
-    stop();
-    timer = setInterval(nextSlide, DELAY);
-  }
-
-  function stop() {
-    if (timer) clearInterval(timer);
-    timer = null;
-  }
-
-  dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      show(Number(dot.getAttribute('data-go')));
-      start();
-    });
-  });
-
-  // Dừng khi rê chuột vào hero, chạy lại khi rời ra
-  hero.addEventListener('mouseenter', stop);
-  hero.addEventListener('mouseleave', start);
-
-  start();
-})();
