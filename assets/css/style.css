@@ -504,120 +504,198 @@ img {
 /* --- 3. HERO SECTION --- */
 .hero-slider-section {
   position: relative;
-  height: 600px;
   overflow: hidden;
   background: #062e39;
 }
 
-@media (max-width: 768px) {
-  .hero-slider-section {
-    height: 400px;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .hero-slider-section {
-    height: 520px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .hero-slider-section {
-    height: 500px;
-  }
-}
-
 .hero-swiper {
   width: 100%;
-  height: 100%;
 }
 
 .hero-swiper .swiper-slide {
-  height: 100%;
-  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: center;
+  position: relative;
 }
 
 .hero-slide-item {
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(6, 46, 57, 0.85) 0%,
-    rgba(6, 46, 57, 0.45) 50%,
-    transparent 100%
-  );
-  z-index: 1;
-}
-
-.hero-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
-.hero-content .container-xl {
-  width: 100%;
-}
-
-.hero-text {
-  max-width: 720px;
-}
-
-.hero-title {
-  font-size: clamp(2rem, 5vw, 5rem);
-  font-weight: 400;
-  line-height: 1.12;
-  margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 32px;
-  }
-}
-
-.hero-desc {
-  font-size: clamp(0.95rem, 1.25vw, 2rem);
-  line-height: 1.65;
-  max-width: 640px;
-  margin-bottom: 0;
-  opacity: 0.92;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide .swiper-slide {
-    transition: none !important;
-  }
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
 }
 
 .hero-bg picture {
   display: block;
   width: 100%;
-  height: 100%;
 }
 
 .hero-bg img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+}
+
+/* lớp phủ nhẹ giống demo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(6, 46, 57, 0.35),
+    rgba(6, 46, 57, 0.08),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Text */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content .container-xl {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  border-radius: 5px;
+  color: #fff;
+  z-index: 2;
+  width: 60%;
+  transition: 2s all;
+  opacity: 0;
+}
+
+/* Khi slide active */
+.hero-swiper .swiper-slide.swiper-slide-active .hero-text {
+  opacity: 1;
+  top: 50%;
+}
+
+.hero-swiper .swiper-slide.swiper-slide-active .hero-title,
+.hero-swiper .swiper-slide.swiper-slide-active .hero-desc {
+  top: 0;
+  opacity: 1;
+}
+
+/* Title */
+.hero-title {
+  color: #fff;
+  font-size: 70px;
+  position: relative;
+  top: 150px;
+  opacity: 0;
+  transition: 1.4s all;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  text-shadow: none;
+}
+
+/* Description */
+.hero-desc {
+  font-size: 26px;
+  position: relative;
+  top: 200px;
+  opacity: 0;
+  transition: 1.6s all;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+/* 1400 */
+@media (max-width: 1400px) {
+  .hero-title {
+    font-size: 50px;
+  }
+
+  .hero-desc {
+    font-size: 22px;
+  }
+}
+
+/* 1025 */
+@media (max-width: 1025px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-desc {
+    font-size: 22px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero-text {
+    width: 80%;
+    left: 50%;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-text {
+    width: 90%;
+    opacity: 1;
+    top: 50%;
+  }
+
+  .hero-swiper .swiper-slide.swiper-slide-active .hero-text {
+    top: 50%;
+  }
+
+  .hero-title,
+  .hero-desc {
+    top: 0;
+    opacity: 1;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 322px) {
+  .hero-title {
+    font-size: 16px;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+  }
 }
 
 /* --- 4. ABOUT SECTION --- */
