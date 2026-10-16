@@ -435,3 +435,63 @@ window.translatePage = function (lang) {
     }, 300);
   }
 };
+/* ==========================================================
+   HERO SLIDER - chữ và nền trượt dọc, lặp vô hạn (không dùng Swiper)
+   Slide hiện tại đi xuống, slide kế tiếp đi lên.
+   ========================================================== */
+(function initHeroSlider() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  const slides = Array.from(hero.querySelectorAll('[data-slide]'));
+  const dots = Array.from(hero.querySelectorAll('[data-go]'));
+  if (slides.length < 2) return;
+
+  const DELAY = 5000; // thời gian mỗi slide đứng yên (ms)
+  let current = 0;
+  let timer = null;
+
+  function show(next) {
+    if (next === current) return;
+    const prev = current;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('is-active', i === next); // slide mới đi lên
+      slide.classList.toggle('is-out', i === prev);    // slide cũ đi xuống
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === next);
+      dot.setAttribute('aria-current', i === next ? 'true' : 'false');
+    });
+
+    current = next;
+  }
+
+  function nextSlide() {
+    show((current + 1) % slides.length);
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(nextSlide, DELAY);
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      show(Number(dot.getAttribute('data-go')));
+      start();
+    });
+  });
+
+  // Dừng khi rê chuột vào hero, chạy lại khi rời ra
+  hero.addEventListener('mouseenter', stop);
+  hero.addEventListener('mouseleave', start);
+
+  start();
+})();
