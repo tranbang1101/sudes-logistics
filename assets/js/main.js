@@ -412,20 +412,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', (e) => {
     if (!popup.contains(e.target)) popup.classList.remove('active');
   });
-  // Language Switcher Trigger for Mobile click support
-  const popupNgonngu = document.getElementById('popupNgonngu');
-  const toggleLangBtn = document.getElementById('toggleLangDropdown');
-  if (toggleLangBtn && popupNgonngu) {
-    toggleLangBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      popupNgonngu.classList.toggle('active');
-    });
-    document.addEventListener('click', (e) => {
-      if (!popupNgonngu.contains(e.target)) {
-        popupNgonngu.classList.remove('active');
-      }
-    });
-  }
 })();
 
 // Gọi doGTranslate('nguồn|đích') của widget GTranslate, ví dụ 'vi|en'
