@@ -278,9 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ==========================================
   // 5. FAQ ACCORDION
-  // ==========================================
   
   const faqItems = document.querySelectorAll('.faq-list li');
   
@@ -303,9 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ==========================================
   // 6. VIDEO POPUP MODAL
-  // ==========================================
   
   const openVideoBtn = document.getElementById('openVideoBtn');
   const popupVideo = document.getElementById('popupVideo');
