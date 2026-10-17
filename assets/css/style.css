@@ -1297,7 +1297,7 @@ img {
   transform: scale(1);
   transition: transform 0.5s ease;
 }
-.section_blog .item-blog .block-thumb:hover img {
+.block-thumb:hover img {
   transform: scale(1.1);
 }
 
