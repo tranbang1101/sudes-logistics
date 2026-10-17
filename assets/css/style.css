@@ -1233,15 +1233,11 @@ img {
   background: var(--color-white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.item-blog:hover {
-  transform: translateY(-5px);
-}
+
 .block-thumb {
   position: relative;
   aspect-ratio: 16/9;
@@ -1252,6 +1248,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 .time_arti {
   position: absolute;
   top: 15px;
@@ -1272,7 +1269,6 @@ img {
 .block-content h3 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-secondary);
   margin-bottom: 10px;
   line-height: 1.4;
   display: -webkit-box;
@@ -1293,15 +1289,14 @@ img {
   overflow: hidden;
 }
 .see_more {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
   color: var(--color-primary);
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 .see_more:hover {
-  color: var(--color-primary-dark);
+  color: #121213;
 }
 
 /* --- 9. FAQ SECTION --- */
