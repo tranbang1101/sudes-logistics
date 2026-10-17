@@ -937,7 +937,7 @@ img {
 
 .item_dich_vu .img_dv {
   position: relative;
-  padding-bottom: 120%; /* Aspect ratio approx 4:5 */
+  padding-bottom: 120%;
   overflow: hidden;
 }
 .item_dich_vu .img_dv img {
@@ -1276,6 +1276,7 @@ img {
   margin-bottom: 10px;
   line-height: 1.4;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1286,6 +1287,7 @@ img {
   margin-bottom: 15px;
   flex-grow: 1;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;

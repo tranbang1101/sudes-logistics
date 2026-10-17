@@ -227,9 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ==========================================
   // 4. NUMBER COUNT-UP EFFECT
-  // ==========================================
   
   const counters = document.querySelectorAll('[data-count]');
   
@@ -245,10 +243,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const updateCount = () => {
       current += increment;
       if (current < target) {
-        el.innerText = Math.ceil(current).toLocaleString('vi-VN');
+        el.innerText = Math.ceil(current);
         requestAnimationFrame(updateCount);
       } else {
-        el.innerText = target.toLocaleString('vi-VN');
+        el.innerText = target;
       }
     };
     
