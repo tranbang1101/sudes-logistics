@@ -1278,7 +1278,7 @@ img {
 }
 .section_blog .item-blog .block-thumb {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 .section_blog .item-blog .block-thumb .thumb {
   position: relative;
@@ -1286,7 +1286,7 @@ img {
   width: 100%;
   height: 0;
   padding-bottom: 63.5%;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 .section_blog .item-blog .block-thumb .thumb img {
   position: absolute;
@@ -1297,11 +1297,11 @@ img {
   transform: scale(1);
   transition: transform 0.3s ease;
 }
-.block-thumb .thumb:hover img {
+.item-blog:hover .block-thumb .thumb img:hover {
   transform: scale(1.1);
 }
 
-/* Nhãn ngày màu cam nghiêng ở góc dưới ảnh */
+/* Nhãn ngày màu cam */
 .section_blog .item-blog .block-thumb .time_arti {
   position: absolute;
   right: 20px;
