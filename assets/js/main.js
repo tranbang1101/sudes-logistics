@@ -286,17 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const heading = item.querySelector('h3');
     if (heading) {
       heading.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        
-        // Close all other items (Optional: remove this block if you want multiple open)
-        faqItems.forEach(otherItem => {
-          otherItem.classList.remove('active');
-        });
-
-        // Toggle current
-        if (!isActive) {
-          item.classList.add('active');
-        }
+        item.classList.toggle('active');
       });
     }
   });
